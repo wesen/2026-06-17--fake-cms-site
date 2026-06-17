@@ -15,11 +15,11 @@
 - [x] P2.2 repo: ListArticles/GetArticleBySlug with ArticleFilter + cursor pagination + totalCount
 - [x] P2.3 repo: batched lookups AuthorByID(s), AuthorsByContentIDs, TermsByContentID, MediaByContentID, BlocksByContentID
 - [x] P2.4 repo unit tests against testdata/cms.db + N+1 counting-driver test
-- [ ] P3.1 Write schema.graphql (the SDL contract from design §7)
-- [ ] P3.2 Global ID encode/decode (base64 Type:rowID) + node(id:) resolver
-- [ ] P3.3 Root Query resolvers: article/page/articles/category/tag/author/media/site + DataLoader wiring
-- [ ] P3.4 Article field resolvers: author/categories/tags/featuredMedia/related; Connection helpers
-- [ ] P3.5 Golden query fixtures: testdata/queries/*.graphql + *.expected.json; schema Exec E2E test
+- [x] P3.1 Write schema.graphql (the SDL contract from design §7)
+- [x] P3.2 Global ID encode/decode (base64 Type:rowID) + node(id:) resolver
+- [x] P3.3 Root Query resolvers: article/page/articles/category/tag/author/media/site + DataLoader wiring
+- [x] P3.4 Article field resolvers: author/categories/tags/featuredMedia/related; Connection helpers
+- [x] P3.5 Golden query fixtures: testdata/queries/*.graphql + *.expected.json; schema Exec E2E test
 - [ ] P4.1 Block union/interface resolvers (paragraph/heading/image/list/quote/embed/gallery)
 - [ ] P4.2 SEO resolver (title/meta/canonical/og/twitter/jsonLd/breadcrumbs) + full-article golden test
 - [ ] P5.1 server.New: net/http mux (/graphql, /playground, /healthz) + serve glazed command

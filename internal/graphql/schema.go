@@ -57,6 +57,9 @@ func Schema(r *repo.Repo) (graphql.Schema, error) {
 		},
 	})
 
+	// Wire ImageBlock.media + GalleryBlock.images to the Media type via repo.
+	wireBlockMedia(blockImage, blockGallery, mediaType, res)
+
 	// ---- Author / Category / Tag ---------------------------------------
 	authorType := graphql.NewObject(graphql.ObjectConfig{
 		Name: "Author",

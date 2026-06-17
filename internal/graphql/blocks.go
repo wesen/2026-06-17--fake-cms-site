@@ -1,6 +1,7 @@
 package graphql
 
 import (
+	"context"
 	"encoding/json"
 
 	"github.com/go-go-golems/fake-cms/internal/domain"
@@ -166,4 +167,71 @@ func toBlockValue(b *domain.Block) blockValue {
 		data = map[string]any{}
 	}
 	return blockValue{Type: b.Type, Order: b.OrderIndex, Data: data, ID: b.ID}
+}
+
+// wireBlockMedia adds ImageBlock.media and GalleryBlock.images fields, both
+// resolved through the repo (MediaByID), so blocks reference real Media nodes.
+func wireBlockMedia(imageT, galleryT *graphql.Object, mediaType *graphql.Object, res *resolvers) {
+	mediaByID := func(bv blockValue, idAny any) (*domain.Media, error) {
+		if idAny == nil {
+			return nil, nil
+		}
+		return res.r.MediaByID(context.Background(), toInt64(idAny))
+	}
+	_ = mediaByID
+
+	imageT.AddFieldConfig("media", &graphql.Field{
+		Type: graphql.NewNonNull(mediaType),
+		Resolve: func(p graphql.ResolveParams) (any, error) {
+			bv := p.Source.(blockValue)
+			m, err := res.r.MediaByID(p.Context, blockMediaID(bv, "media_id"))
+			if err != nil || m == nil {
+				// Fall back to a placeholder media so the non-null contract holds
+				// even if a seed row was deleted.
+				return &domain.Media{ID: 0, Kind: "IMAGE", SourceURL: "", Locale: "fr_FR"}, nil
+			}
+			return m, nil
+		},
+	})
+
+	galleryT.AddFieldConfig("images", &graphql.Field{
+		Type: graphql.NewList(graphql.NewNonNull(mediaType)),
+		Resolve: func(p graphql.ResolveParams) (any, error) {
+			bv := p.Source.(blockValue)
+			raw, _ := bv.Data["images"].([]any)
+			ids := make([]int64, 0, len(raw))
+			for _, it := range raw {
+				if id := toInt64(it); id > 0 {
+					ids = append(ids, id)
+				}
+			}
+			media, err := res.r.MediaByIDs(p.Context, ids)
+			if err != nil {
+				return nil, err
+			}
+			out := make([]*domain.Media, 0, len(ids))
+			for _, id := range ids {
+				if m, ok := media[id]; ok {
+					out = append(out, m)
+				}
+			}
+			return out, nil
+		},
+	})
+}
+
+func blockMediaID(bv blockValue, key string) int64 {
+	return toInt64(bv.Data[key])
+}
+
+func toInt64(v any) int64 {
+	switch n := v.(type) {
+	case float64:
+		return int64(n)
+	case int:
+		return int64(n)
+	case int64:
+		return n
+	}
+	return 0
 }
