@@ -35,3 +35,14 @@ P0 done (commit c4876e0): go module + glazed CLI skeleton; version command works
 - /home/manuel/code/wesen/2026-06-17--fake-cms-site/cmd/fake-cms/main.go — Root entrypoint wired via glazed
 - /home/manuel/code/wesen/2026-06-17--fake-cms-site/internal/cli/cli.go — Shared field sections + command registration
 
+
+## 2026-06-17
+
+P1 done (commits dfb10da, 8e8935d): migrations + repo.Open + deterministic seed; testdata/cms.db committed (146 nodes, 1378 blocks); content-deterministic
+
+### Related Files
+
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/internal/repo/repo.go — Open/Migrate/Recreate
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/internal/repo/seed.go — Deterministic seeder
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/testdata/cms.db — Committed seed artifact
+

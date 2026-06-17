@@ -47,28 +47,28 @@ const (
 
 // Author is a person who wrote content.
 type Author struct {
-	ID           int64
-	Slug         string
-	DisplayName  string
-	Email        string
-	Description  string
+	ID            int64
+	Slug          string
+	DisplayName   string
+	Email         *string // legacy: may be NULL or a raw email
+	Description   *string
 	AvatarMediaID *int64
-	Locale       string
+	Locale        string
 }
 
 // Media is an asset (image, video, pdf...).
 type Media struct {
-	ID       int64
-	Slug     string
-	Kind     string // IMAGE|VIDEO|PDF|AUDIO|FILE
+	ID        int64
+	Slug      string
+	Kind      string // IMAGE|VIDEO|PDF|AUDIO|FILE
 	SourceURL string
-	Alt      string
-	Width    *int64
-	Height   *int64
-	MimeType string
-	FileSize *int64
-	Caption  string
-	Locale   string
+	Alt       *string
+	Width     *int64
+	Height    *int64
+	MimeType  *string
+	FileSize  *int64
+	Caption   *string
+	Locale    string
 }
 
 // Term is a category or tag.
@@ -77,7 +77,7 @@ type Term struct {
 	TaxonomySlug string // category | post_tag
 	Slug         string
 	Name         string
-	Description  string
+	Description  *string
 	ParentTermID *int64
 }
 

@@ -20,6 +20,9 @@ import (
 // Repo wraps a *sql.DB with typed CMS queries.
 type Repo struct {
 	DB *sql.DB
+	// Q is the read Querier used by query methods. It is DB by default but
+	// can be replaced with a counting querier in tests (N+1 guard).
+	Q Querier
 }
 
 // Open opens (or creates) the SQLite file, enables WAL + foreign_keys for file
@@ -56,7 +59,7 @@ func Open(ctx context.Context, path string) (*Repo, error) {
 		}
 	}
 
-	r := &Repo{DB: db}
+	r := &Repo{DB: db, Q: db}
 	if err := r.Migrate(ctx); err != nil {
 		_ = db.Close()
 		return nil, err
@@ -66,6 +69,25 @@ func Open(ctx context.Context, path string) (*Repo, error) {
 
 // Close releases the database handle.
 func (r *Repo) Close() error { return r.DB.Close() }
+
+// New wraps an existing *sql.DB (already open) and ensures migrations are
+// applied. Tests use it to inject an instrumented connection.
+func New(ctx context.Context, db *sql.DB) (*Repo, error) {
+	r := &Repo{DB: db, Q: db}
+	if err := r.Migrate(ctx); err != nil {
+		return nil, err
+	}
+	return r, nil
+}
+
+// WithQuerier returns a shallow copy of the repo whose read path uses the
+// provided Querier (e.g. a counting wrapper for the N+1 test). The underlying
+// DB handle is shared.
+func (r *Repo) WithQuerier(q Querier) *Repo {
+	cp := *r
+	cp.Q = q
+	return &cp
+}
 
 // Migrate applies embedded SQL files ordered by filename, skipping ones already
 // recorded in schema_version. It is idempotent.
