@@ -25,3 +25,4 @@
 - [x] P5.1 server.New: net/http mux (/graphql, /playground, /healthz) + serve glazed command
 - [x] P5.2 seed + 'db query' glazed commands (structured output) + README quickstart + workshop contract
 - [x] P5.3 Smoke: build, run serve, curl a query, golden E2E; finalize diary + reMarkable re-upload
+- [x] Write glazed help entries (API spec) + bundle in app + README

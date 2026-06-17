@@ -12,8 +12,16 @@ DocType: index
 Intent: long-term
 Owners: []
 RelatedFiles:
+    - Path: README.md
+      Note: Project README
     - Path: cmd/fake-cms/main.go
       Note: Root entrypoint
+    - Path: internal/cli/cli.go
+      Note: setupHelp wires glazed HelpSystem into the root command
+    - Path: internal/doc/api-reference.md
+      Note: Detailed GraphQL API spec as a glazed help entry
+    - Path: internal/doc/doc.go
+      Note: Embeds help entries; loaded by cli.setupHelp
     - Path: internal/graphql/blocks.go
       Note: Block union + media resolution
     - Path: internal/graphql/schema.go
@@ -46,6 +54,7 @@ LastUpdated: 2026-06-17T15:44:25.091855419-04:00
 WhatFor: ""
 WhenToUse: ""
 ---
+
 
 
 

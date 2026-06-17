@@ -56,3 +56,22 @@ Implemented full mock (P0-P5, commits c4876e0..a79c029): glazed CLI, SQLite repo
 - /home/manuel/code/wesen/2026-06-17--fake-cms-site/internal/server/server.go — HTTP server
 - /home/manuel/code/wesen/2026-06-17--fake-cms-site/schema.graphql — GraphQL contract
 
+
+## 2026-06-17
+
+Added glazed help entries (detailed API spec) bundled into the app via embedded HelpSystem; rewrote README (commit 7b79207). 'fake-cms help api-reference' works offline.
+
+### Related Files
+
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/README.md — Polished README
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/internal/doc/api-reference.md — Detailed API spec help entry
+
+
+## 2026-06-17
+
+Backfilled diary Step 10 (glazed help API spec + README, commit 7b79207). Diary now covers all 10 steps; noted that earlier steps were backfilled rather than incremental.
+
+### Related Files
+
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/ttmp/2026/06/17/FAKE-CMS--fake-internal-cms-graphql-api-20minutes-style-for-ssg-workshop/reference/01-investigation-diary.md — Diary backfill
+

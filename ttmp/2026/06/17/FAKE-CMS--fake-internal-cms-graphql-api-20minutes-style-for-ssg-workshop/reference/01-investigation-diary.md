@@ -7,6 +7,12 @@ DocType: ""
 Intent: ""
 Owners: []
 RelatedFiles:
+    - Path: README.md
+      Note: Step 10 polished README
+    - Path: internal/cli/cli.go
+      Note: Step 10 setupHelp wires glazed HelpSystem
+    - Path: internal/doc/api-reference.md
+      Note: Step 10 detailed API spec help entry
     - Path: internal/graphql/schema.go
       Note: Step 9 GraphQL core
     - Path: internal/repo/seed.go
@@ -25,6 +31,7 @@ LastUpdated: 0001-01-01T00:00:00Z
 WhatFor: ""
 WhenToUse: ""
 ---
+
 
 
 
@@ -785,3 +792,82 @@ full-article golden test proves the contract is satisfiable.
 ### Technical details
 
 Commits: `6288c0a` (P3), `2d93f45` (P4), `a79c029` (P5).
+
+---
+
+## Step 10: Glazed help entries (API spec) bundled in the app + README (commit 7b79207)
+
+> Note on cadence: this step was **not** recorded while working — I am backfilling it. Earlier steps (5–9) were likewise backfilled in a single batch rather than updated incrementally. Going forward I should append a diary step at each commit boundary, not at the end of a chunk.
+
+The user asked for a detailed API spec in the **glazed help entry format**, bundled with the app, plus a polished README. This step added both.
+
+### Prompt Context
+
+**User prompt (verbatim):** "Write a detailed API spec in the galzed help entry format and bundle it with the app. Also write a nice README on the project if you haven't already."
+
+**Assistant interpretation:** Author glazed help markdown entries (correct frontmatter, section types) covering the API reference, embed them in the binary so `fake-cms help api-reference` works offline, wire the glazed HelpSystem into the root command, and write/refresh the README.
+
+**Inferred user intent:** A self-contained, discoverable, reviewable API spec that ships with the binary (not just in the ticket), so workshop participants get it via `fake-cms help`.
+
+### What I did
+
+- Loaded the `glazed-help-page-authoring` skill; treated it as authoritative for frontmatter keys, SectionType, and the Go integration pattern.
+- Verified the exact API against the glazed v1.3.6 module cache before coding:
+  - `help.NewHelpSystem()`, `LoadSectionsFromFS(fs.FS, dir)`, `model.ParseSectionFromMarkdown` (reads YAML keys `Title`, `SubTitle`, `Short`, `SectionType`, `Slug`, `Topics`, `Flags`, `Commands`, `IsTopLevel`, `IsTemplate`, `ShowPerDefault`, `Order`).
+  - `help/cmd.SetupCobraRootCommand(hs, root)` — the canonical root wiring (lives in `pkg/help/cmd`, not `pkg/cli`).
+  - Confirmed valid SectionType strings: `GeneralTopic`, `Example`, `Application`, `Tutorial`.
+  - Read the reference pattern in `corporate-headquarters/glazed/cmd/glaze/main.go`.
+- Wrote 7 help entries under `internal/doc/`:
+  - `api-reference.md` (GeneralTopic, top-level) — the detailed, field-by-field spec: endpoint, scalars, global ids/`node(id:)`, all enums, every Query field, `ArticleFilter`/`ArticleOrder`, Relay connections + the pagination loop, Article/Page/Author/Category/Tag/Media, the **BlockUnion** contract with the inline-fragment example, SEO/Yoast, the one-request full-render query, and a troubleshooting table.
+  - `overview.md`, `content-model.md`, `commands.md`, `quickstart.md` (Tutorial), `workshop-ssg.md` (Application, the SSG plugin contract + acceptance criteria), `n-plus-one.md`.
+- `internal/doc/doc.go`: `//go:embed *.md` loader.
+- `cli.setupHelp`: `help.NewHelpSystem()` → `LoadSectionsFromFS(doc.FS, ".")` → `helpcmd.SetupCobraRootCommand(hs, root)`, called once from `BuildRootCobra`.
+- Promoted 6 of the 7 pages to `IsTopLevel: true` so the landing listing surfaces the main entry points.
+- Rewrote `README.md`: why-it-exists, features, **correct flags** (`--path`/`--addr`; the old stub had stale `--db-path`/`migrations/0001_init.sql` paths), a copy-pasteable sample query, a Mermaid architecture diagram, commands table, content-model summary, and the workshop URL contract.
+
+### Why
+
+The schema is the workshop contract; a field-by-field spec that ships with the binary (and renders via `fake-cms help api-reference`) is more durable and discoverable than a doc living only in the ticket. Following the skill's definition-of-done (embed + `SetupCobraRootCommand`) means the CLI gets the rich help/usage templates, not default Cobra help.
+
+### What worked
+
+- All 7 slugs resolve via `fake-cms help <slug>`; the landing page lists the 6 top-level entry points.
+- `api-reference` renders the complete spec including the inline-fragment block query and the troubleshooting table.
+- Build + vet + full test suite green; `docmgr doctor` all-pass.
+
+### What didn't work
+
+- **`//go:embed` path:** I first wrote entries under project-root `doc/` but `go:embed` is package-relative, so the loader couldn't find them. Fixed by moving the `.md` files into `internal/doc/` next to `doc.go` (kept the `doc` name; the package is `internal/doc`).
+- **Missing go.sum entries:** wiring `help/cmd` transitively imports the glazed help **TUI** (`pkg/help/ui`), which pulls `charmbracelet/bubbles`, `/lipgloss`, `/viewport`. `go build` failed until `go mod tidy` added them. (The skill's "logging section" guidance would add even more; I intentionally did **not** wire clay logging yet — left as a future step.)
+- **Section-prefix flag mismatch:** the old README quickstart used `--db-path`, which does not exist (flags are `--path` from the `db` section). Fixed in the README; this was already documented in the `commands` help entry's troubleshooting table.
+
+### What I learned
+
+- The glazed help system's frontmatter is parsed by `model.ParseSectionFromMarkdown` reading **exact string keys** (`Title`, not `title`), but YAML is case-insensitive on keys so either works; the skill's canonical form is PascalCase.
+- "Bundle with the app" for glazed means: embed the `.md` files + call `SetupCobraRootCommand` exactly once on the root. Anything less leaves default Cobra help.
+
+### What was tricky to build
+
+- Getting the embed path right without trial-and-error on every layout: the robust rule is "the `.md` files live in the same dir as the `//go:embed` directive's package".
+- The transitive TUI dependency surprise: the help *command* (non-TUI) still imports the TUI package, so a CLI that only wants the text help pays the charmbracelet cost. Acceptable for a workshop binary; noted.
+
+### What warrants a second pair of eyes
+
+- The help entries are hand-synced with `schema.graphql` and the resolvers. If the schema changes, the `api-reference` page must be updated in lockstep (no codegen yet).
+- `OpenGraph`/`TwitterCard` are documented as typed objects in the SDL but the resolver currently returns opaque `JSON`/`String` for `seo.og`/`seo.twitter`. The `api-reference` page says "(emitted as JSON in v1)" — confirm this matches reality, or align the SDL and resolvers.
+
+### What should be done in the future
+
+- **Diary cadence:** append a step at each commit boundary instead of backfilling.
+- Add the clay logging section to the root (`logging.AddLoggingSectionToRootCommand`) to fully meet the glazed help skill's DoD.
+- Generate the `api-reference` types/fields table from `schema.graphql` so it cannot drift.
+
+### Code review instructions
+
+- `make build && ./fake-cms help api-reference` renders the full spec.
+- `for s in overview api-reference content-model commands quickstart workshop-ssg n-plus-one; do ./fake-cms help $s >/dev/null || echo MISSING $s; done` (all resolve).
+- `grep -r "IsTopLevel: true" internal/doc` (6 top-level entries).
+
+### Technical details
+
+Commit: `7b79207`. Files: `internal/doc/{doc.go,api-reference.md,overview.md,content-model.md,commands.md,quickstart.md,workshop-ssg.md,n-plus-one.md}`, `internal/cli/cli.go` (`setupHelp`), `README.md`.
