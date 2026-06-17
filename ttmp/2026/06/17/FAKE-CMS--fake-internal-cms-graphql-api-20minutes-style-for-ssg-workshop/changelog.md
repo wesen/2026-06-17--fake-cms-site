@@ -25,3 +25,13 @@ Validated (doctor clean), added frontmatter to sources/, uploaded design+diary b
 
 - /home/manuel/code/wesen/2026-06-17--fake-cms-site/ttmp/2026/06/17/FAKE-CMS--fake-internal-cms-graphql-api-20minutes-style-for-ssg-workshop/design-doc/01-fake-cms-graphql-api-design-implementation-guide.md — Uploaded to reMarkable
 
+
+## 2026-06-17
+
+P0 done (commit c4876e0): go module + glazed CLI skeleton; version command works; go build clean
+
+### Related Files
+
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/cmd/fake-cms/main.go — Root entrypoint wired via glazed
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/internal/cli/cli.go — Shared field sections + command registration
+
