@@ -11,10 +11,10 @@
 - [x] P1.2 repo.Open: open modernc sqlite, apply migrations, enable WAL + foreign_keys; migration idempotency
 - [x] P1.3 repo.Seed: deterministic PRNG generator building authors/terms/media/articles/blocks/seo from sources/_raw
 - [x] P1.4 Commit testdata/cms.db + sha256; verify re-seed reproduces identical hash
-- [ ] P2.1 domain structs: Article, Page, Author, Term, Media, Block, SEO (no graphql/sql tags)
-- [ ] P2.2 repo: ListArticles/GetArticleBySlug with ArticleFilter + cursor pagination + totalCount
-- [ ] P2.3 repo: batched lookups AuthorByID(s), AuthorsByContentIDs, TermsByContentID, MediaByContentID, BlocksByContentID
-- [ ] P2.4 repo unit tests against testdata/cms.db + N+1 counting-driver test
+- [x] P2.1 domain structs: Article, Page, Author, Term, Media, Block, SEO (no graphql/sql tags)
+- [x] P2.2 repo: ListArticles/GetArticleBySlug with ArticleFilter + cursor pagination + totalCount
+- [x] P2.3 repo: batched lookups AuthorByID(s), AuthorsByContentIDs, TermsByContentID, MediaByContentID, BlocksByContentID
+- [x] P2.4 repo unit tests against testdata/cms.db + N+1 counting-driver test
 - [ ] P3.1 Write schema.graphql (the SDL contract from design §7)
 - [ ] P3.2 Global ID encode/decode (base64 Type:rowID) + node(id:) resolver
 - [ ] P3.3 Root Query resolvers: article/page/articles/category/tag/author/media/site + DataLoader wiring

@@ -1,0 +1,210 @@
+# schema.graphql — Fake CMS Content Delivery API (read-only)
+#
+# THE contract for the SSG workshop. Single source of truth.
+# Mirrors a legacy WordPress + Yoast media CMS (see design-doc §7).
+
+schema { query: Query }
+
+# ---- Scalars --------------------------------------------------------------
+scalar DateTime   # ISO-8601, e.g. "2013-11-19T11:11:20+00:00"
+scalar JSON       # opaque JSON (Yoast jsonLd, meta)
+scalar URL        # absolute URL
+
+# ---- Enums ----------------------------------------------------------------
+enum PostType {
+  ACTUALITES
+  BEST_CASES
+  ETUDES
+  BLOG
+  SLIDER_DE_UNE
+  CARTOUCHES_HOME
+  NON_CLASSE
+}
+
+enum ArticleStatus { DRAFT PUBLISH FUTURE PRIVATE TRASH }
+
+enum OrderField { PUBLISHED_AT MODIFIED_AT TITLE MENU_ORDER }
+enum OrderDirection { ASC DESC }
+
+enum MediaKind { IMAGE VIDEO PDF AUDIO FILE }
+enum Locale { FR_FR EN_US DE_DE }   # slot only; v1 ships FR_FR
+
+# ---- Node interface (Relay global identity) -------------------------------
+interface Node { id: ID! }
+
+# ---- Taxonomy & people ----------------------------------------------------
+type Author implements Node {
+  id: ID!
+  slug: String!
+  displayName: String!
+  email: String               # legacy: may be a raw email, may be null
+  description: String
+  avatar: Media
+  locale: Locale!
+  articles(first: Int = 10, after: String): ArticleConnection!
+}
+
+type Category implements Node {
+  id: ID!
+  slug: String!
+  name: String!
+  description: String
+  parent: Category            # nullable; root categories have none
+  articles(first: Int = 10, after: String): ArticleConnection!
+}
+
+type Tag implements Node {
+  id: ID!
+  slug: String!
+  name: String!
+  description: String
+  articles(first: Int = 10, after: String): ArticleConnection!
+}
+
+# ---- Media ----------------------------------------------------------------
+type Media implements Node {
+  id: ID!
+  slug: String!
+  kind: MediaKind!
+  url: URL!
+  alt: String
+  width: Int
+  height: Int
+  mimeType: String
+  fileSize: Int
+  caption: String
+  sourceUrl: URL!             # original (full-res) URL
+  locale: Locale!
+}
+
+# ---- SEO (Yoast) ----------------------------------------------------------
+type SEO {
+  title: String!
+  metaDescription: String
+  canonical: URL
+  robots: String              # e.g. "index,follow"
+  og: OpenGraph
+  twitter: TwitterCard
+  jsonLd: JSON                # the raw Yoast JSON-LD graph for the resource
+  breadcrumbs: [Breadcrumb!]!
+}
+
+type OpenGraph { title: String description: String image: Media type: String locale: String siteName: String }
+type TwitterCard { card: String title: String description: String image: Media }
+type Breadcrumb { label: String! url: URL! }
+
+# ---- Content blocks (union + interface) -----------------------------------
+# The body of an Article/Page is an ORDERED list of typed blocks.
+interface Block {
+  id: ID!
+  order: Int!
+}
+type ParagraphBlock implements Block { id: ID! order: Int! text: String! align: Align }
+type HeadingBlock   implements Block { id: ID! order: Int! level: Int! text: String! anchor: String }
+type ImageBlock     implements Block { id: ID! order: Int! media: Media! caption: String link: URL size: String }
+type ListBlock      implements Block { id: ID! order: Int! ordered: Boolean! items: [String!]! }
+type QuoteBlock     implements Block { id: ID! order: Int! text: String! citation: String }
+type EmbedBlock     implements Block { id: ID! order: Int! provider: String! url: URL! caption: String }
+type GalleryBlock   implements Block { id: ID! order: Int! images: [Media!]! columns: Int }
+enum Align { LEFT CENTER RIGHT NONE }
+union BlockUnion = ParagraphBlock | HeadingBlock | ImageBlock | ListBlock | QuoteBlock | EmbedBlock | GalleryBlock
+
+# ---- Articles & Pages -----------------------------------------------------
+interface Content implements Node {
+  id: ID!
+  slug: String!
+  title: String!
+  status: ArticleStatus!
+  locale: Locale!
+  publishedAt: DateTime
+  modifiedAt: DateTime!
+  seo: SEO!
+  blocks: [BlockUnion!]!      # ordered body
+  featuredMedia: Media
+}
+
+type Article implements Content & Node {
+  id: ID!
+  slug: String!
+  title: String!
+  excerpt: String
+  status: ArticleStatus!
+  postType: PostType!
+  locale: Locale!
+  publishedAt: DateTime
+  modifiedAt: DateTime!
+  author: Author!
+  categories: [Category!]!
+  tags: [Tag!]!
+  featuredMedia: Media
+  blocks: [BlockUnion!]!
+  seo: SEO!
+  wordCount: Int
+  related(first: Int = 5): [Article!]!     # same postType + shared tags
+}
+
+type Page implements Content & Node {
+  id: ID!
+  slug: String!
+  title: String!
+  status: ArticleStatus!
+  locale: Locale!
+  publishedAt: DateTime
+  modifiedAt: DateTime!
+  parent: Page
+  menuOrder: Int!
+  template: String            # e.g. "page-display.php"
+  featuredMedia: Media
+  blocks: [BlockUnion!]!
+  seo: SEO!
+}
+
+# ---- Connections (Relay cursor pagination) --------------------------------
+type ArticleConnection { edges: [ArticleEdge!]! pageInfo: PageInfo! totalCount: Int! }
+type ArticleEdge { node: Article! cursor: String! }
+type PageInfo { hasNextPage: Boolean! hasPreviousPage: Boolean! startCursor: String endCursor: String }
+
+# ---- Top-level Query ------------------------------------------------------
+input ArticleOrder { field: OrderField! direction: OrderDirection! = DESC }
+input ArticleFilter {
+  postType: PostType
+  status: ArticleStatus = PUBLISH
+  categorySlug: String
+  tagSlug: String
+  authorSlug: String
+  search: String            # legacy: LIKE-based full text
+  publishedAfter: DateTime
+  publishedBefore: DateTime
+}
+
+type Query {
+  node(id: ID!): Node
+  article(id: ID, slug: String): Article
+  page(id: ID, slug: String): Page
+  articles(
+    filter: ArticleFilter
+    first: Int = 20
+    after: String
+    orderBy: ArticleOrder = {field: PUBLISHED_AT, direction: DESC}
+  ): ArticleConnection!
+  categories(first: Int = 20): [Category!]!
+  category(slug: String!): Category
+  tags(first: Int = 20): [Tag!]!
+  tag(slug: String!): Tag
+  authors(first: Int = 20): [Author!]!
+  author(slug: String!): Author
+  media(id: ID!): Media
+  site: Site!
+}
+
+type Site {
+  name: String!
+  description: String
+  url: URL!
+  locale: Locale!
+  logo: Media
+  menus: [Menu!]!
+}
+
+type Menu { slug: String! name: String! items: [MenuItem!]! }
+type MenuItem { label: String! url: URL! order: Int! children: [MenuItem!]! }
