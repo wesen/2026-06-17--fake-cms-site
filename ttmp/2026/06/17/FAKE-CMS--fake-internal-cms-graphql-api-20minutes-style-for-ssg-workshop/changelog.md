@@ -46,3 +46,13 @@ P1 done (commits dfb10da, 8e8935d): migrations + repo.Open + deterministic seed;
 - /home/manuel/code/wesen/2026-06-17--fake-cms-site/internal/repo/seed.go — Deterministic seeder
 - /home/manuel/code/wesen/2026-06-17--fake-cms-site/testdata/cms.db — Committed seed artifact
 
+
+## 2026-06-17
+
+Implemented full mock (P0-P5, commits c4876e0..a79c029): glazed CLI, SQLite repo+seed, schema-first GraphQL, block union, net/http server. N+1 guard = 7 SQL ops for 20 articles. Live server smoke green.
+
+### Related Files
+
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/internal/server/server.go — HTTP server
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/schema.graphql — GraphQL contract
+

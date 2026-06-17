@@ -7,6 +7,12 @@ DocType: ""
 Intent: ""
 Owners: []
 RelatedFiles:
+    - Path: internal/graphql/schema.go
+      Note: Step 9 GraphQL core
+    - Path: internal/repo/seed.go
+      Note: Step 7 seed FK bug + fix
+    - Path: internal/server/server.go
+      Note: Step 9 HTTP server
     - Path: ttmp/2026/06/17/FAKE-CMS--fake-internal-cms-graphql-api-20minutes-style-for-ssg-workshop/scripts/01-fetch-sitemaps.py
       Note: Step 2 evidence script
     - Path: ttmp/2026/06/17/FAKE-CMS--fake-internal-cms-graphql-api-20minutes-style-for-ssg-workshop/scripts/02-parse-page-schema.py
@@ -19,6 +25,7 @@ LastUpdated: 0001-01-01T00:00:00Z
 WhatFor: ""
 WhenToUse: ""
 ---
+
 
 
 # Diary
@@ -385,3 +392,396 @@ reMarkable delivery before handoff.
 
 ### Technical details
 reMarkable remote path: `/ai/2026/06/17/FAKE-CMS/FAKE-CMS — Design & Implementation Guide`.
+
+---
+
+## Step 5: Plan detailed tasks and set the working loop
+
+Before writing implementation code we decomposed the 5-phase plan into 22
+granular, checkable tasks and established a git baseline, so progress is
+auditable and resumable.
+
+### Prompt Context
+
+**User prompt (verbatim):** "ok, add detailed tasks to the ticket, then go through them one by one, committingat appropriate intervals, keeping a diary as you work."
+
+**Assistant interpretation:** Replace the generic phase tasks with a granular
+P0–P5 task list, then implement each, committing per phase, recording every
+step here.
+
+**Inferred user intent:** A reproducible, reviewable build trail; an intern
+should be able to `git log` and read the diary to understand every decision.
+
+### What I did
+
+- Committed the research/design as the baseline (`edbcea7`).
+- Cleared the placeholder tasks; added 22 tasks (P0.1–P5.3) via
+  `docmgr task add`.
+- Established the working loop per phase: implement → `make build-all && make
+  test` → commit → `docmgr task check` → `docmgr changelog update` → diary.
+- Saved all throwaway investigation programs under
+  `scripts/debug/04-…-12-…go` (per the user's instruction to store all scripts
+  and temp programs in the ticket's scripts/ folder), and excluded `ttmp/`
+  from `go build`/`go test` via the Makefile (the debug mains are standalone
+  repros, not part of the module build).
+
+### Why
+
+Granular tasks + per-phase commits give the workshop a clean, bisectable
+history and make the diary self-validating (each step maps to a commit hash).
+
+### What worked
+
+- The Makefile `$(go list ./... | grep -v '/ttmp/')` filter cleanly separates
+  repro scripts from the module.
+- Committing at phase boundaries kept diffs reviewable.
+
+### What didn't work
+
+- Initial `docmgr task remove` left shifting IDs (each removal renumbered); I
+  cleared by repeatedly removing id 1.
+
+### What I learned
+
+- Even "throwaway" debug programs belong in the ticket: several (the
+  LastInsertId probe, the FK isolator) were essential to diagnosing the seed
+  bug and are worth keeping for the intern.
+
+### What was tricky to build
+
+- Making `go test ./...` ignore the `ttmp` standalone `package main` repros
+  (they can't be `go run` if named `_test.go`, and they collide with each other
+  if built together). Resolution: name them `NN-*.go`, keep them as distinct
+  `package main` files run individually via `go run <file>`, and exclude the
+  dir from module builds.
+
+### What warrants a second pair of eyes
+
+- The task granularity: confirm nothing important (e.g. `related(first:)`
+  resolver, `Site`/`Menu` query) is silently dropped from v1 scope. (See "open
+  questions": `related` and `site` are in the SDL but not yet resolvers.)
+
+### What should be done in the future
+
+- Promote the debug scripts into a `cmd/dev` set or a `testdata/scripts`
+  harness once the API stabilizes.
+
+### Code review instructions
+
+- `docmgr task list --ticket FAKE-CMS` shows the 22-task plan with checkmarks.
+- `git log --oneline` shows one commit per phase.
+
+### Technical details
+
+Commits so far: `edbcea7` (docs) → then implementation commits below.
+
+---
+
+## Step 6: Phase 0 — go module + glazed CLI skeleton (commit c4876e0)
+
+Scaffolded the module and wired a glazed root command so the CLI is testable
+from the start.
+
+### Prompt Context
+
+**User prompt (verbatim):** (see Step 5)
+
+**Assistant interpretation:** Implement P0: module, deps, dirs, root command.
+
+### What I did
+
+- `go mod init github.com/go-go-golems/fake-cms`; added
+  `glazed@v1.3.6`, `graphql-go/graphql@v0.8.1`, `modernc.org/sqlite@v1.52.0`.
+- Verified the glazed v1.3.6 API against the module cache
+  (`cli.BuildCobraCommand`, `cmds.NewCommandDescription`, `schema.NewSection`,
+  `values.Values.DecodeSectionInto`) before coding.
+- `cmd/fake-cms/main.go` + `internal/cli` (shared `db`/`http` sections,
+  `version` command, `serve`/`seed`/`db` no-op stubs).
+- `internal/build` version metadata; `Makefile`; `README.md`; `.gitignore`.
+- Verified: `make build && ./fake-cms version` → `fake-cms 0.0.0-dev`.
+
+### Why
+
+glazed gives uniform flags/structured output for free; wiring it first avoids a
+rewrite later. Confirming the exact API from the cache prevented compile churn.
+
+### What worked
+
+- `go build ./...` green on first try after the API check.
+- glazed resolves cleanly from the public Go proxy (no replace needed).
+
+### What didn't work
+
+- Nothing material.
+
+### What I learned
+
+- glazed's `BareCommand.Run(ctx, *values.Values)` + `cli.BuildCobraCommand` is
+  the minimal, stable pattern; `DecodeSectionInto` is the cleanest way to read
+  section values into a tagged struct.
+
+### What was tricky to build
+
+- None this phase.
+
+### What warrants a second pair of eyes
+
+- Dependency versions pinned in `go.mod` are fine for a workshop; CI should
+  `go mod verify`.
+
+### What should be done in the future
+
+- Bump `graphql-go` to the latest if schema features need it; v0.8.1 suffices.
+
+### Code review instructions
+
+- `go build ./... && ./fake-cms version`.
+
+### Technical details
+
+Commit: `c4876e0`.
+
+---
+
+## Step 7: Phase 1 — migrations, repo.Open, deterministic seed, testdata (commits dfb10da, 8e8935d)
+
+Built the storage layer and the deterministic dataset, hitting one real bug
+that the debug scripts (saved in `scripts/debug/`) were essential to diagnose.
+
+### Prompt Context
+
+**User prompt (verbatim):** (see Step 5)
+
+**Assistant interpretation:** Implement P1: SQLite schema, migration runner,
+seed generator, committed `testdata/cms.db`.
+
+### What I did
+
+- `internal/migrations/0001_init.sql` (all tables + seeded lookup enums). Put
+  SQL next to a `migrations.go` with `//go:embed *.sql` (package-relative
+  embed) — an earlier attempt at `migrations/*.sql` from `internal/repo`
+  failed to match.
+- `repo.Open`: modernc `sqlite`, `?_pragma=busy_timeout`, WAL + FK for file
+  DBs, `SetMaxOpenConns(1)`, idempotent `Migrate` (owns `schema_version`,
+  records versions after applying), `Recreate`.
+- `repo.Seed`: `rand.New(rand.NewSource(42))`, builds authors/media/terms/
+  articles(140)/pages(6)/blocks(1378)/seo/menu; block `data` as JSON.
+- Committed `testdata/cms.db`; wrote a content-level sha256 over normalized,
+  ordered rows to prove determinism.
+
+### Why
+
+Determinism is the whole point of the mock for a graded workshop.
+
+### What worked
+
+- Migration idempotency test + recreate test green.
+- Seed content is byte-stable across runs (verified via `11-verify-det.go`).
+
+### What didn't work
+
+- **Bug:** seed failed with `FOREIGN KEY constraint failed (787)` at article
+  #1. Initial hypothesis (author ID capture) was confirmed wrong by isolated
+  repros. Root cause, found via `06-debug-seed-step.go` (dumped 0 authors) +
+  `07-debug-author-id.go` (isolated insert worked) + a temporary debug print
+  in `seed.go`: `author.ID == 0`. The `seedAuthors` loop was discarding the
+  `LastInsertId` (`_, err := s.exec(...)`) and building `domain.Author{Slug,
+  DisplayName}` with no `ID`. Fix: capture `id, err := s.exec(...)` and set
+  `ID: id`. (This is exactly why the repro scripts were saved.)
+- **Bug:** initial determinism assertion used the opaque file sha256, which
+  is NOT byte-stable (SQLite page allocator / header counters). Switched to a
+  content-level hash over normalized rows.
+- **Bug:** my first content-hash differed because `%v` on `[]byte`/NULL is
+  unstable; a tighter per-column `sql.NullString` serialization confirmed
+  determinism.
+
+### What I learned
+
+- SQLite's on-disk bytes are not reproducible even for identical data; assert
+  determinism on data, not file.
+- LastInsertId capture must be explicit and tested early — a silent zero FK
+  target is a nasty failure mode.
+
+### What was tricky to build
+
+- The seed FK bug: the symptom (FK fail) pointed at the child insert, but the
+  cause was the parent's discarded ID. Only stepping the seed and dumping
+  per-table counts localized it.
+
+### What warrants a second pair of eyes
+
+- `modernc` JSON1 must be enabled for `block.data` queries (it is by default);
+  repo tests exercise `json` columns only indirectly. Add a direct
+  `json_extract` test.
+
+### What should be done in the future
+
+- Generate a larger seed (1000+ articles) to stress pagination.
+
+### Code review instructions
+
+- `make test` (repo tests green); `go run scripts/debug/06-debug-seed-step.go`
+  for counts; `go run scripts/debug/11-verify-det.go` for determinism.
+
+### Technical details
+
+Commits: `dfb10da` (P1.1–1.2), `8e8935d` (P1.3–1.4). Debug scripts:
+`scripts/debug/04..12`.
+
+---
+
+## Step 8: Phase 2 — repository queries + N+1 guard (commit 4f90a23)
+
+Implemented the read path with batched loaders and a counting-Querier N+1 test.
+
+### Prompt Context
+
+**User prompt (verbatim):** (see Step 5)
+
+**Assistant interpretation:** Implement P2: domain structs, ListArticles +
+pagination/filters, batched relationship loaders, N+1 test.
+
+### What I did
+
+- `repo/articles.go`: `ListArticles` (keyset cursor on `published_at DESC, id
+  DESC`, `ArticleFilter`, `first+1` trick for `HasNext`, separate `COUNT` for
+  `totalCount`), `GetArticleBySlug/Page/ByID`, `GetArticlePostType`.
+- `repo/related.go`: batched `AuthorsByContentIDs`, `TermsByContentIDs`,
+  `BlocksByContentIDs`, `MediaByIDs`, `FeaturedMediaByContentIDs`,
+  `SEOByContentIDs` — each ONE query for N ids.
+- `Querier` interface + `WithQuerier` injection; `dbcount` Querier counter.
+- domain nullable fields → pointers (`*string`/`*int64`) for correct NULL
+  modeling; `scanContentNode` uses `sql.Null*` locals.
+- Tests: pagination, filters, slug round-trip, batched lookups, `TestNoNPlus1`.
+
+### Why
+
+N+1 is the #1 legacy-API trap; the design doc commits to a DataLoader-style
+batched repo, and the test enforces it in CI.
+
+### What worked
+
+- `TestNoNPlus1`: resolving 20 articles + author/terms/blocks/featured/seo =
+  **7 SQL ops** (list + count + 5 batches). A naive resolver would be 1+1+20·5.
+
+### What didn't work
+
+- NULL scan errors (`template`/`description`) surfaced once nullable columns
+  were read; fixed by pointer domain fields + Null scans.
+
+### What I learned
+
+- Modeling nullable DB columns as pointer struct fields (not zero values) keeps
+  the "is it set?" question unambiguous for resolvers.
+
+### What was tricky to build
+
+- The counting driver: modernc doesn't export its `driver.Conn`, and its
+  `ConnectionHook` is connection-open only (not per-query). Cleanest honest
+  solution: depend on a `Querier` interface and inject a counting wrapper.
+
+### What warrants a second pair of eyes
+
+- `ListArticles` builds dynamic JOINs per filter; confirm no SQL injection
+  (all user input is parameterized `?`; only identifiers are static).
+
+### What should be done in the future
+
+- A real DataLoader with per-request cache so a single GraphQL query with
+  nested `author.articles.author` doesn't re-fetch.
+
+### Code review instructions
+
+- `go test ./internal/repo -run TestNoNPlus1 -v`.
+
+### Technical details
+
+Commit: `4f90a23`.
+
+---
+
+## Step 9: Phase 3–5 — GraphQL core, blocks/SEO, HTTP server + smoke (commits 6288c0a, 2d93f45, a79c029)
+
+Built the schema-first GraphQL layer, the block union with media resolution,
+and the stdlib HTTP server; smoke-tested end to end.
+
+### Prompt Context
+
+**User prompt (verbatim):** (see Step 5)
+
+**Assistant interpretation:** Implement P3 (schema+resolvers), P4 (blocks+SEO),
+P5 (server+commands+smoke).
+
+### What I did
+
+- `schema.graphql`: the full SDL contract (single source of truth for the
+  workshop).
+- `internal/graphql`: programmatic schema over repo; custom scalars
+  (DateTime/JSON/URL); Relay global IDs + `node(id:)`; `Block` interface +
+  `BlockUnion`; root Query + Article/Page field resolvers; SEO resolver
+  surfaces Yoast og/twitter/jsonLd/breadcrumbs.
+- `wireBlockMedia`: `ImageBlock.media` and `GalleryBlock.images` resolve to
+  real `Media` nodes via repo.
+- `internal/server`: stdlib `net/http` mux — `/graphql` (POST/GET),
+  `/playground` (embedded GraphiQL), `/healthz`, `/` landing.
+- `cli serve/seed/db query`: glazed BareCommands; `db query` is the read-only
+  SQL escape hatch.
+- Golden/E2E tests: schema builds; `articles(first:)` with nested author+media;
+  block union via inline fragments; full-article render payload; live server
+  smoke (`curl` → 200 + correct JSON).
+
+### Why
+
+The SSG plugin must get a complete render payload in one query; the
+full-article golden test proves the contract is satisfiable.
+
+### What worked
+
+- Live smoke: `./fake-cms serve` answered
+  `{articles{edges{node{slug title postType author{slug}}}}}` with 200 OK and
+  nested author resolution.
+- graphql-go union/interface split works; inline fragment `... on Block { order }`
+  reads shared fields on the union.
+
+### What didn't work
+
+- **Name clash:** `internal/graphql` and `github.com/graphql-go/graphql` are
+  both `graphql`; `server.go` couldn't see `graphql.Do`. Fix: import internal
+  as `cmsgraphql`, library as `gql`.
+- **Union shared fields:** querying `order` directly on `BlockUnion` errors;
+  must use `... on Block { order }`. Fixed the test query (this is correct
+  GraphQL and a good teaching moment — documented in README).
+
+### What I learned
+
+- graphql-go's programmatic (config) API is the pragmatic choice for unions/
+  interfaces; schema-first SDL parsing would need a codegen step we wanted to
+  avoid. The SDL file is still THE contract — kept in sync manually.
+
+### What was tricky to build
+
+- Wiring `ImageBlock.media`/`GalleryBlock.images` (schema needs repo access at
+  build time) without a circular ref: resolved by adding the fields after the
+  Media type is built, in `Schema()`.
+
+### What warrants a second pair of eyes
+
+- `Article.related(first:)` and `Site`/`Menu`/`categories` tree are in the SDL
+  but not yet backed by resolvers (open scope). Either implement or remove
+  from the SDL before the workshop to avoid misleading participants.
+- `OpenGraph`/`TwitterCard` are returned as opaque `JSON`/`String` rather than
+  the typed objects in the SDL — acceptable for v1, but document it.
+
+### What should be done in the future
+
+- Implement `related`, `Site`, `Menu`, and typed `OpenGraph`/`TwitterCard`.
+- Add a CI workflow (build/vet/test) and `goreleaser`.
+
+### Code review instructions
+
+- `make build && make test && ./fake-cms serve --path testdata/cms.db &`
+  then `curl -s localhost:8080/graphql -d '{"query":"{articles(first:1){totalCount}}"}'`.
+
+### Technical details
+
+Commits: `6288c0a` (P3), `2d93f45` (P4), `a79c029` (P5).

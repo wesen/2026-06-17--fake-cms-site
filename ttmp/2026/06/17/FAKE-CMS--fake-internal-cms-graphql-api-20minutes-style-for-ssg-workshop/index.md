@@ -12,6 +12,22 @@ DocType: index
 Intent: long-term
 Owners: []
 RelatedFiles:
+    - Path: cmd/fake-cms/main.go
+      Note: Root entrypoint
+    - Path: internal/graphql/blocks.go
+      Note: Block union + media resolution
+    - Path: internal/graphql/schema.go
+      Note: Programmatic GraphQL schema
+    - Path: internal/repo/repo.go
+      Note: Open/Migrate/Recreate + Querier
+    - Path: internal/repo/seed.go
+      Note: Deterministic SQLite seeder
+    - Path: internal/server/server.go
+      Note: net/http GraphQL server + GraphiQL
+    - Path: schema.graphql
+      Note: The GraphQL SDL contract (single source of truth)
+    - Path: testdata/cms.db
+      Note: Committed deterministic seed
     - Path: ttmp/2026/06/17/FAKE-CMS--fake-internal-cms-graphql-api-20minutes-style-for-ssg-workshop/scripts/01-fetch-sitemaps.py
       Note: Reproducible sitemap inventory generator
     - Path: ttmp/2026/06/17/FAKE-CMS--fake-internal-cms-graphql-api-20minutes-style-for-ssg-workshop/scripts/02-parse-page-schema.py
@@ -30,6 +46,7 @@ LastUpdated: 2026-06-17T15:44:25.091855419-04:00
 WhatFor: ""
 WhenToUse: ""
 ---
+
 
 
 # Fake internal CMS GraphQL API (20minutes-style) for SSG workshop
