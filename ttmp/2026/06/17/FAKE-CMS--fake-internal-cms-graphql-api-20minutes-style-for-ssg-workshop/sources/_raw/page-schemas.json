@@ -1,0 +1,1347 @@
+[
+  {
+    "kind": "page",
+    "url": "https://www.20minutes-media.com/nos-solutions/display",
+    "slug": "display",
+    "http_status": 200,
+    "title": "Display - 20 Minutes Media",
+    "meta_description": null,
+    "canonical": "https://163.172.238.144/nos-solutions/display",
+    "og": {
+      "og:locale": "fr_FR",
+      "og:type": "article",
+      "og:title": "Display - 20 Minutes Media",
+      "og:description": "Acteur incontournable parmi les sites d’information, le site et l’application de 20 Minutes délivrent une information actualisée à la seconde, 24h/24h et 7 jours sur 7, grâce à une rédaction […]",
+      "og:url": "https://163.172.238.144/nos-solutions/display",
+      "og:site_name": "20 Minutes Media",
+      "og:image": "https://163.172.238.144/content/uploads/2021/02/Mockup_B_fond_blanc_HD-scaled-1.jpg",
+      "og:image:width": "2560",
+      "og:image:height": "2109",
+      "og:image:type": "image/jpeg"
+    },
+    "twitter": {
+      "twitter:label1": "Durée de lecture estimée",
+      "twitter:data1": "2 minutes"
+    },
+    "body_class": "wp-singular page-template-default page page-id-483143 page-child parent-pageid-78 wp-theme-20mm wp-child-theme-20mm-argu cookies-not-set",
+    "h1": [],
+    "author_slug": null,
+    "terms": {
+      "categories": [
+        "actualites",
+        "best-cases"
+      ],
+      "tags": [
+        "nos-solutions",
+        "offres"
+      ]
+    },
+    "featured_image": {
+      "url": "https://163.172.238.144/content/uploads/2021/02/Mockup_B_fond_blanc_HD-scaled-1.jpg"
+    },
+    "json_ld_types": [
+      null,
+      "WebPage",
+      "ImageObject",
+      "BreadcrumbList",
+      "WebSite"
+    ],
+    "article_schema": {
+      "headline": null,
+      "datePublished": "2015-04-19T23:43:44+00:00",
+      "dateModified": null,
+      "author": null,
+      "image": {
+        "@id": "https://163.172.238.144/nos-solutions/display#primaryimage"
+      },
+      "articleSection": null,
+      "keywords": null
+    },
+    "main_selector": null,
+    "block_counts": {
+      "h1": 0,
+      "h2": 0,
+      "h3": 4,
+      "h4": 0,
+      "p": 12,
+      "figure": 0,
+      "img": 15,
+      "blockquote": 0,
+      "iframe": 1,
+      "ul": 2,
+      "ol": 0,
+      "li": 13,
+      "table": 0,
+      "a": 48,
+      "div": 41
+    },
+    "image_count": 15,
+    "image_sample": [
+      "https://www.20minutes-media.com/content/themes/20mm/assets/img/front/logo-20mm-purple.png",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2021/02/Mockup_B_fond_blanc_HD-scaled-1-1000x450.jpg",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/wp-content/uploads/2021/02/Sans-titre-1-400x225.png"
+    ]
+  },
+  {
+    "kind": "page",
+    "url": "https://www.20minutes-media.com/nos-solutions/video",
+    "slug": "video",
+    "http_status": 200,
+    "title": "Vidéo - 20 Minutes Media",
+    "meta_description": null,
+    "canonical": "https://www.20minutes-media.com/nos-solutions/video",
+    "og": {
+      "og:locale": "fr_FR",
+      "og:type": "article",
+      "og:title": "Vidéo - 20 Minutes Media",
+      "og:description": "20 Minutes traite l’information sous tous les formats et notamment en vidéo pour coller au mieux aux usages et habitudes de consommation de sa cible de jeunes actifs urbains. Sur […]",
+      "og:url": "https://www.20minutes-media.com/nos-solutions/video",
+      "og:site_name": "20 Minutes Media",
+      "og:image": "https://www.20minutes-media.com/content/uploads/2015/04/20min_Paris.27112019-PAR-Clemence-Fenaux_0022-1-scaled.jpg",
+      "og:image:width": "2560",
+      "og:image:height": "1707",
+      "og:image:type": "image/jpeg"
+    },
+    "twitter": {
+      "twitter:label1": "Durée de lecture estimée",
+      "twitter:data1": "2 minutes"
+    },
+    "body_class": "wp-singular page-template-default page page-id-495499 page-child parent-pageid-78 wp-theme-20mm wp-child-theme-20mm-argu cookies-not-set",
+    "h1": [],
+    "author_slug": null,
+    "terms": {
+      "categories": [
+        "actualites",
+        "best-cases"
+      ],
+      "tags": [
+        "nos-solutions",
+        "offres"
+      ]
+    },
+    "featured_image": {
+      "url": "https://www.20minutes-media.com/content/uploads/2015/04/20min_Paris.27112019-PAR-Clemence-Fenaux_0022-1-scaled.jpg"
+    },
+    "json_ld_types": [
+      null,
+      "WebPage",
+      "ImageObject",
+      "BreadcrumbList",
+      "WebSite"
+    ],
+    "article_schema": {
+      "headline": null,
+      "datePublished": "2015-04-20T02:57:07+00:00",
+      "dateModified": null,
+      "author": null,
+      "image": {
+        "@id": "https://www.20minutes-media.com/nos-solutions/video#primaryimage"
+      },
+      "articleSection": null,
+      "keywords": null
+    },
+    "main_selector": null,
+    "block_counts": {
+      "h1": 0,
+      "h2": 0,
+      "h3": 2,
+      "h4": 0,
+      "p": 15,
+      "figure": 0,
+      "img": 14,
+      "blockquote": 0,
+      "iframe": 2,
+      "ul": 6,
+      "ol": 0,
+      "li": 19,
+      "table": 0,
+      "a": 45,
+      "div": 40
+    },
+    "image_count": 14,
+    "image_sample": [
+      "https://www.20minutes-media.com/content/themes/20mm/assets/img/front/logo-20mm-purple.png",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2015/04/20min_Paris.27112019-PAR-Clemence-Fenaux_0022-1-1000x450.jpg",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+    ]
+  },
+  {
+    "kind": "page",
+    "url": "https://www.20minutes-media.com/presse",
+    "slug": "presse",
+    "http_status": 200,
+    "title": "Communiqués de presse - 20 Minutes Media",
+    "meta_description": null,
+    "canonical": "https://www.20minutes-media.com/presse",
+    "og": {
+      "og:locale": "fr_FR",
+      "og:type": "article",
+      "og:title": "Communiqués de presse - 20 Minutes Media",
+      "og:description": "Consulter les archives des communiqué de presse de 2014 »",
+      "og:url": "https://www.20minutes-media.com/presse",
+      "og:site_name": "20 Minutes Media",
+      "og:image": "https://www.20minutes-media.com/content/uploads/2015/07/iStock_000029420090_Large-e1435920894296.jpg",
+      "og:image:width": "2424",
+      "og:image:height": "1593",
+      "og:image:type": "image/jpeg"
+    },
+    "twitter": {},
+    "body_class": "wp-singular page-template-default page page-id-658 wp-theme-20mm wp-child-theme-20mm-argu cookies-not-set",
+    "h1": [],
+    "author_slug": null,
+    "terms": {
+      "categories": [
+        "actualites",
+        "best-cases"
+      ],
+      "tags": [
+        "communiques-de-presse",
+        "offres"
+      ]
+    },
+    "featured_image": {
+      "url": "https://www.20minutes-media.com/content/uploads/2015/07/iStock_000029420090_Large-e1435920894296.jpg"
+    },
+    "json_ld_types": [
+      null,
+      "WebPage",
+      "ImageObject",
+      "BreadcrumbList",
+      "WebSite"
+    ],
+    "article_schema": {
+      "headline": null,
+      "datePublished": "2015-06-27T16:43:50+00:00",
+      "dateModified": "2015-07-07T14:43:07+00:00",
+      "author": null,
+      "image": {
+        "@id": "https://www.20minutes-media.com/presse#primaryimage"
+      },
+      "articleSection": null,
+      "keywords": null
+    },
+    "main_selector": null,
+    "block_counts": {
+      "h1": 0,
+      "h2": 0,
+      "h3": 0,
+      "h4": 0,
+      "p": 3,
+      "figure": 0,
+      "img": 13,
+      "blockquote": 0,
+      "iframe": 1,
+      "ul": 2,
+      "ol": 0,
+      "li": 13,
+      "table": 2,
+      "a": 367,
+      "div": 41
+    },
+    "image_count": 13,
+    "image_sample": [
+      "https://www.20minutes-media.com/content/themes/20mm/assets/img/front/logo-20mm-purple.png",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2015/07/iStock_000029420090_Large-e1435920894296-1000x450.jpg",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2026/04/Design-sans-titre-1-705x320.png"
+    ]
+  },
+  {
+    "kind": "page",
+    "url": "https://www.20minutes-media.com/a-propos",
+    "slug": "a-propos",
+    "http_status": 200,
+    "title": "À propos de 20 Minutes - 20 Minutes Media",
+    "meta_description": "Avec 21 millions d’utilisateurs chaque mois, 20 Minutes s’est imposée dans le paysage médiatique français. Au cœur de son projet...",
+    "canonical": "https://20minutes.clic-clic-network.com/a-propos",
+    "og": {
+      "og:locale": "fr_FR",
+      "og:type": "article",
+      "og:title": "À propos de 20 Minutes - 20 Minutes Media",
+      "og:description": "Avec 21 millions d’utilisateurs chaque mois, 20 Minutes s’est imposée dans le paysage médiatique français. Au cœur de son projet...",
+      "og:url": "https://20minutes.clic-clic-network.com/a-propos",
+      "og:site_name": "20 Minutes Media",
+      "og:image": "https://20minutes.clic-clic-network.com/content/uploads/2025/04/A-LA-UNE-A-PROPOS-1-958x602.png",
+      "og:image:width": "958",
+      "og:image:height": "602",
+      "og:image:type": "image/png"
+    },
+    "twitter": {
+      "twitter:label1": "Durée de lecture estimée",
+      "twitter:data1": "4 minutes"
+    },
+    "body_class": "wp-singular page-template-default page page-id-2 wp-theme-20mm wp-child-theme-20mm-argu cookies-not-set",
+    "h1": [],
+    "author_slug": null,
+    "terms": {
+      "categories": [
+        "actualites",
+        "best-cases"
+      ],
+      "tags": [
+        "a-propos",
+        "offres"
+      ]
+    },
+    "featured_image": {
+      "url": "https://20minutes.clic-clic-network.com/content/uploads/2025/04/A-LA-UNE-A-PROPOS-1-958x602.png"
+    },
+    "json_ld_types": [
+      null,
+      "WebPage",
+      "ImageObject",
+      "BreadcrumbList",
+      "WebSite"
+    ],
+    "article_schema": {
+      "headline": null,
+      "datePublished": "2015-04-06T16:16:29+00:00",
+      "dateModified": "2025-04-10T12:37:43+00:00",
+      "author": null,
+      "image": {
+        "@id": "https://20minutes.clic-clic-network.com/a-propos#primaryimage"
+      },
+      "articleSection": null,
+      "keywords": null
+    },
+    "main_selector": null,
+    "block_counts": {
+      "h1": 0,
+      "h2": 0,
+      "h3": 0,
+      "h4": 6,
+      "p": 19,
+      "figure": 0,
+      "img": 17,
+      "blockquote": 0,
+      "iframe": 1,
+      "ul": 2,
+      "ol": 0,
+      "li": 13,
+      "table": 0,
+      "a": 46,
+      "div": 40
+    },
+    "image_count": 17,
+    "image_sample": [
+      "https://www.20minutes-media.com/content/themes/20mm/assets/img/front/logo-20mm-purple.png",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2025/04/A-LA-UNE-A-PROPOS-1-1000x450.png",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://20minutes.clic-clic-network.com/wp-content/uploads/2015/04/iStock_000048770412_Large-400x266.jpg"
+    ]
+  },
+  {
+    "kind": "page",
+    "url": "https://www.20minutes-media.com/marketing/panel",
+    "slug": "panel",
+    "http_status": 200,
+    "title": "Le panel lecteurs 20 Minutes, un outil unique - 20 Minutes Media",
+    "meta_description": null,
+    "canonical": "https://quiz.20minutes.fr/marketing/panel",
+    "og": {
+      "og:locale": "fr_FR",
+      "og:type": "article",
+      "og:title": "Le panel lecteurs 20 Minutes, un outil unique - 20 Minutes Media",
+      "og:description": "Lancé dès 2003, le panel des lecteurs 20 Minutes compte parmi les tout premiers panels de presse quotidienne en France. Il est utilisé pour une variété d’enquêtes, éditoriales autant que publicitaires […]",
+      "og:url": "https://quiz.20minutes.fr/marketing/panel",
+      "og:site_name": "20 Minutes Media",
+      "og:image": "https://quiz.20minutes.fr/content/uploads/2016/02/panel.jpg",
+      "og:image:width": "2624",
+      "og:image:height": "1576",
+      "og:image:type": "image/jpeg"
+    },
+    "twitter": {
+      "twitter:label1": "Durée de lecture estimée",
+      "twitter:data1": "1 minute"
+    },
+    "body_class": "wp-singular page-template-default page page-id-192 page-child parent-pageid-183 wp-theme-20mm wp-child-theme-20mm-argu cookies-not-set",
+    "h1": [],
+    "author_slug": null,
+    "terms": {
+      "categories": [
+        "actualites",
+        "best-cases"
+      ],
+      "tags": [
+        "marketing",
+        "offres"
+      ]
+    },
+    "featured_image": {
+      "url": "https://quiz.20minutes.fr/content/uploads/2016/02/panel.jpg"
+    },
+    "json_ld_types": [
+      null,
+      "WebPage",
+      "ImageObject",
+      "BreadcrumbList",
+      "WebSite"
+    ],
+    "article_schema": {
+      "headline": null,
+      "datePublished": "2015-04-24T15:56:43+00:00",
+      "dateModified": "2016-02-22T10:31:55+00:00",
+      "author": null,
+      "image": {
+        "@id": "https://quiz.20minutes.fr/marketing/panel#primaryimage"
+      },
+      "articleSection": null,
+      "keywords": null
+    },
+    "main_selector": null,
+    "block_counts": {
+      "h1": 0,
+      "h2": 0,
+      "h3": 0,
+      "h4": 0,
+      "p": 4,
+      "figure": 0,
+      "img": 13,
+      "blockquote": 0,
+      "iframe": 1,
+      "ul": 2,
+      "ol": 0,
+      "li": 13,
+      "table": 0,
+      "a": 42,
+      "div": 40
+    },
+    "image_count": 13,
+    "image_sample": [
+      "https://www.20minutes-media.com/content/themes/20mm/assets/img/front/logo-20mm-purple.png",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2016/02/panel-1000x450.jpg",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2026/04/Design-sans-titre-1-705x320.png"
+    ]
+  },
+  {
+    "kind": "post/best-cases",
+    "url": "https://www.20minutes-media.com/best-cases/suez-environnement-2",
+    "slug": "suez-environnement-2",
+    "http_status": 200,
+    "title": "Suez Environnement - 20 Minutes Media",
+    "meta_description": null,
+    "canonical": "https://quiz.20minutes.fr/best-cases/suez-environnement-2",
+    "og": {
+      "og:locale": "fr_FR",
+      "og:type": "article",
+      "og:title": "Suez Environnement - 20 Minutes Media",
+      "og:description": "L’actu Suez Environnement a un objectif pédagogique et d’image : faire connaître et expliquer ses différents métiers et ses engagements. Le concept 20 Minutes organise un rendez-vous régulier avec ses […]",
+      "og:url": "https://quiz.20minutes.fr/best-cases/suez-environnement-2",
+      "og:site_name": "20 Minutes Media",
+      "og:image": "https://quiz.20minutes.fr/content/uploads/2013/11/vignette-1.jpg",
+      "og:image:width": "1000",
+      "og:image:height": "500",
+      "og:image:type": "image/jpeg"
+    },
+    "twitter": {
+      "twitter:label1": "Écrit par",
+      "twitter:data1": "admin@clic-clic.com"
+    },
+    "body_class": "wp-singular post-template-default single single-post postid-155816 single-format-standard wp-theme-20mm wp-child-theme-20mm-argu cookies-not-set",
+    "h1": [],
+    "author_slug": null,
+    "terms": {
+      "categories": [
+        "best-cases"
+      ],
+      "tags": []
+    },
+    "featured_image": {
+      "url": "https://quiz.20minutes.fr/content/uploads/2013/11/vignette-1.jpg"
+    },
+    "json_ld_types": [
+      null,
+      "Article",
+      "WebPage",
+      "ImageObject",
+      "BreadcrumbList",
+      "WebSite",
+      "Person"
+    ],
+    "article_schema": {
+      "headline": "Suez Environnement",
+      "datePublished": "2013-11-19T11:11:20+00:00",
+      "dateModified": null,
+      "author": {
+        "name": "admin@clic-clic.com",
+        "@id": "https://www.20minutes-media.com/#/schema/person/d490bbe33e98f6326c1402a4a5b29f5f"
+      },
+      "image": {
+        "@id": "https://quiz.20minutes.fr/best-cases/suez-environnement-2#primaryimage"
+      },
+      "articleSection": [
+        "Best cases"
+      ],
+      "keywords": null
+    },
+    "main_selector": null,
+    "block_counts": {
+      "h1": 0,
+      "h2": 12,
+      "h3": 0,
+      "h4": 0,
+      "p": 79,
+      "figure": 0,
+      "img": 2,
+      "blockquote": 0,
+      "iframe": 1,
+      "ul": 5,
+      "ol": 0,
+      "li": 41,
+      "table": 0,
+      "a": 100,
+      "div": 184
+    },
+    "image_count": 2,
+    "image_sample": [
+      "https://www.20minutes-media.com/content/themes/20mm/assets/img/front/logo-20mm-purple.png",
+      "https://www.20minutes-media.com/content/themes/20mm/assets/img/front/cross.png"
+    ]
+  },
+  {
+    "kind": "post/best-cases",
+    "url": "https://www.20minutes-media.com/best-cases/mini-adventure-trip-2",
+    "slug": "mini-adventure-trip-2",
+    "http_status": 200,
+    "title": "Mini Adventure Trip - 20 Minutes Media",
+    "meta_description": null,
+    "canonical": "https://wishbot.20minutes.fr/best-cases/mini-adventure-trip-2",
+    "og": {
+      "og:locale": "fr_FR",
+      "og:type": "article",
+      "og:title": "Mini Adventure Trip - 20 Minutes Media",
+      "og:description": "L’actu A l’occasion de son évènement “Mini Adventure Trip”, la marque automobile Mini veut communiquer sur sa marque et valoriser les valeurs de sensation et d’évasion qu’elle procure. Le concept […]",
+      "og:url": "https://wishbot.20minutes.fr/best-cases/mini-adventure-trip-2",
+      "og:site_name": "20 Minutes Media",
+      "og:image": "https://wishbot.20minutes.fr/content/uploads/2016/06/Mini-bis-1.jpg",
+      "og:image:width": "832",
+      "og:image:height": "516",
+      "og:image:type": "image/jpeg"
+    },
+    "twitter": {
+      "twitter:label1": "Écrit par",
+      "twitter:data1": "admin@clic-clic.com",
+      "twitter:label2": "Durée de lecture estimée",
+      "twitter:data2": "1 minute"
+    },
+    "body_class": "wp-singular post-template-default single single-post postid-153527 single-format-standard wp-theme-20mm wp-child-theme-20mm-argu cookies-not-set",
+    "h1": [],
+    "author_slug": null,
+    "terms": {
+      "categories": [
+        "best-cases"
+      ],
+      "tags": []
+    },
+    "featured_image": {
+      "url": "https://wishbot.20minutes.fr/content/uploads/2016/06/Mini-bis-1.jpg"
+    },
+    "json_ld_types": [
+      null,
+      "Article",
+      "WebPage",
+      "ImageObject",
+      "BreadcrumbList",
+      "WebSite",
+      "Person"
+    ],
+    "article_schema": {
+      "headline": "Mini Adventure Trip",
+      "datePublished": "2013-12-31T23:16:28+00:00",
+      "dateModified": null,
+      "author": {
+        "name": "admin@clic-clic.com",
+        "@id": "https://www.20minutes-media.com/#/schema/person/d490bbe33e98f6326c1402a4a5b29f5f"
+      },
+      "image": {
+        "@id": "https://wishbot.20minutes.fr/best-cases/mini-adventure-trip-2#primaryimage"
+      },
+      "articleSection": [
+        "Best cases"
+      ],
+      "keywords": [
+        "Use case"
+      ]
+    },
+    "main_selector": null,
+    "block_counts": {
+      "h1": 0,
+      "h2": 12,
+      "h3": 0,
+      "h4": 0,
+      "p": 79,
+      "figure": 0,
+      "img": 2,
+      "blockquote": 0,
+      "iframe": 1,
+      "ul": 5,
+      "ol": 0,
+      "li": 41,
+      "table": 0,
+      "a": 100,
+      "div": 184
+    },
+    "image_count": 2,
+    "image_sample": [
+      "https://www.20minutes-media.com/content/themes/20mm/assets/img/front/logo-20mm-purple.png",
+      "https://www.20minutes-media.com/content/themes/20mm/assets/img/front/cross.png"
+    ]
+  },
+  {
+    "kind": "post/best-cases",
+    "url": "https://www.20minutes-media.com/best-cases/ratp-navigo-2",
+    "slug": "ratp-navigo-2",
+    "http_status": 200,
+    "title": "RATP - Navigo - 20 Minutes Media",
+    "meta_description": null,
+    "canonical": "https://wishbot.20minutes.fr/best-cases/ratp-navigo-2",
+    "og": {
+      "og:locale": "fr_FR",
+      "og:type": "article",
+      "og:title": "RATP - Navigo - 20 Minutes Media",
+      "og:description": "L’actu La RATP souhaite faire connaître les innovations et les nouveaux services offerts par le pass Navigo. Le concept Un dispositif cross média étendu sur plusieurs jours, qui valorise l’offre […]",
+      "og:url": "https://wishbot.20minutes.fr/best-cases/ratp-navigo-2",
+      "og:site_name": "20 Minutes Media",
+      "og:image": "https://wishbot.20minutes.fr/content/uploads/2014/10/ratp-navigo-e1542017241572-1.jpg",
+      "og:image:width": "700",
+      "og:image:height": "467",
+      "og:image:type": "image/jpeg"
+    },
+    "twitter": {
+      "twitter:label1": "Écrit par",
+      "twitter:data1": "Anne Baron"
+    },
+    "body_class": "wp-singular post-template-default single single-post postid-153537 single-format-standard wp-theme-20mm wp-child-theme-20mm-argu cookies-not-set",
+    "h1": [],
+    "author_slug": null,
+    "terms": {
+      "categories": [
+        "best-cases"
+      ],
+      "tags": []
+    },
+    "featured_image": {
+      "url": "https://wishbot.20minutes.fr/content/uploads/2014/10/ratp-navigo-e1542017241572-1.jpg"
+    },
+    "json_ld_types": [
+      null,
+      "Article",
+      "WebPage",
+      "ImageObject",
+      "BreadcrumbList",
+      "WebSite",
+      "Person"
+    ],
+    "article_schema": {
+      "headline": "RATP &#8211; Navigo",
+      "datePublished": "2014-10-01T10:13:34+00:00",
+      "dateModified": null,
+      "author": {
+        "name": "Anne Baron",
+        "@id": "https://www.20minutes-media.com/#/schema/person/4caa20980ee368138822218410c43e92"
+      },
+      "image": {
+        "@id": "https://wishbot.20minutes.fr/best-cases/ratp-navigo-2#primaryimage"
+      },
+      "articleSection": [
+        "Best cases"
+      ],
+      "keywords": null
+    },
+    "main_selector": null,
+    "block_counts": {
+      "h1": 0,
+      "h2": 12,
+      "h3": 0,
+      "h4": 0,
+      "p": 79,
+      "figure": 0,
+      "img": 2,
+      "blockquote": 0,
+      "iframe": 1,
+      "ul": 5,
+      "ol": 0,
+      "li": 41,
+      "table": 0,
+      "a": 100,
+      "div": 184
+    },
+    "image_count": 2,
+    "image_sample": [
+      "https://www.20minutes-media.com/content/themes/20mm/assets/img/front/logo-20mm-purple.png",
+      "https://www.20minutes-media.com/content/themes/20mm/assets/img/front/cross.png"
+    ]
+  },
+  {
+    "kind": "post/actualites",
+    "url": "https://www.20minutes-media.com/actualites/la-21e-minute-prendre-le-temps",
+    "slug": "la-21e-minute-prendre-le-temps",
+    "http_status": 200,
+    "title": "La 21e minute : prendre le temps… - 20 Minutes Media",
+    "meta_description": null,
+    "canonical": "https://163.172.238.144/actualites/la-21e-minute-prendre-le-temps",
+    "og": {
+      "og:locale": "fr_FR",
+      "og:type": "article",
+      "og:title": "La 21e minute : prendre le temps… - 20 Minutes Media",
+      "og:description": "Ce nouveau format éditorial offre un temps de lecture et d’approfondissement différent et complémentaire de la production journalistique au quotidien. Un format riche en vidéos, infographies, diaporamas photos et quiz […]",
+      "og:url": "https://163.172.238.144/actualites/la-21e-minute-prendre-le-temps",
+      "og:site_name": "20 Minutes Media",
+      "og:image": "https://163.172.238.144/content/uploads/2015/04/Screenshot-2015-04-19-18.07.16.jpg",
+      "og:image:width": "1856",
+      "og:image:height": "925",
+      "og:image:type": "image/jpeg"
+    },
+    "twitter": {
+      "twitter:label1": "Écrit par",
+      "twitter:data1": "Anne Baron",
+      "twitter:label2": "Durée de lecture estimée",
+      "twitter:data2": "1 minute"
+    },
+    "body_class": "wp-singular post-template-default single single-post postid-14 single-format-standard wp-theme-20mm wp-child-theme-20mm-argu cookies-not-set",
+    "h1": [],
+    "author_slug": null,
+    "terms": {
+      "categories": [
+        "actualites",
+        "best-cases"
+      ],
+      "tags": [
+        "offre",
+        "offres"
+      ]
+    },
+    "featured_image": {
+      "url": "https://163.172.238.144/content/uploads/2015/04/Screenshot-2015-04-19-18.07.16.jpg"
+    },
+    "json_ld_types": [
+      null,
+      "Article",
+      "WebPage",
+      "ImageObject",
+      "BreadcrumbList",
+      "WebSite",
+      "Person"
+    ],
+    "article_schema": {
+      "headline": "La 21e minute : prendre le temps…",
+      "datePublished": "2015-04-10T06:50:09+00:00",
+      "dateModified": "2015-07-01T21:15:06+00:00",
+      "author": {
+        "name": "Anne Baron",
+        "@id": "https://www.20minutes-media.com/#/schema/person/4caa20980ee368138822218410c43e92"
+      },
+      "image": {
+        "@id": "https://163.172.238.144/actualites/la-21e-minute-prendre-le-temps#primaryimage"
+      },
+      "articleSection": [
+        "Actualités",
+        "actualités en une"
+      ],
+      "keywords": [
+        "Offres"
+      ]
+    },
+    "main_selector": null,
+    "block_counts": {
+      "h1": 0,
+      "h2": 0,
+      "h3": 0,
+      "h4": 0,
+      "p": 5,
+      "figure": 0,
+      "img": 9,
+      "blockquote": 0,
+      "iframe": 1,
+      "ul": 2,
+      "ol": 0,
+      "li": 13,
+      "table": 0,
+      "a": 35,
+      "div": 33
+    },
+    "image_count": 9,
+    "image_sample": [
+      "https://www.20minutes-media.com/content/themes/20mm/assets/img/front/logo-20mm-purple.png",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2015/04/Screenshot-2015-04-19-18.07.16-1000x450.jpg",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2026/05/Design-sans-titre-16-705x320.png"
+    ]
+  },
+  {
+    "kind": "post/actualites",
+    "url": "https://www.20minutes-media.com/actualites/reuters-institute-20-minutes-2e-marque-la-plus-utilisee-pour-sinformer-en-ligne",
+    "slug": "reuters-institute-20-minutes-2e-marque-la-plus-utilisee-pour-sinformer-en-ligne",
+    "http_status": 200,
+    "title": "Reuters Institute Digital News Report 2015 : 20 Minutes la marque d'info la plus utilisée chaque semaine en France - 20 Minutes Media",
+    "meta_description": null,
+    "canonical": "https://163.172.238.144/actualites/reuters-institute-20-minutes-2e-marque-la-plus-utilisee-pour-sinformer-en-ligne",
+    "og": {
+      "og:locale": "fr_FR",
+      "og:type": "article",
+      "og:title": "Reuters Institute Digital News Report 2015 : 20 Minutes la marque d'info la plus utilisée chaque semaine en France - 20 Minutes Media",
+      "og:description": "Le nouveau rapport mondial sur la consommation de l’info dans le monde réalisé par l’Institut Reuters pour l’Université d’Oxford vient de paraître.  20 Minutes se classe cette année n°1 des […]",
+      "og:url": "https://163.172.238.144/actualites/reuters-institute-20-minutes-2e-marque-la-plus-utilisee-pour-sinformer-en-ligne",
+      "og:site_name": "20 Minutes Media",
+      "og:image": "https://163.172.238.144/content/uploads/2015/04/iStock_000018974535_Medium.jpg",
+      "og:image:width": "1200",
+      "og:image:height": "774",
+      "og:image:type": "image/jpeg"
+    },
+    "twitter": {
+      "twitter:label1": "Écrit par",
+      "twitter:data1": "Anne Baron"
+    },
+    "body_class": "wp-singular post-template-default single single-post postid-7 single-format-standard wp-theme-20mm wp-child-theme-20mm-argu cookies-not-set",
+    "h1": [],
+    "author_slug": null,
+    "terms": {
+      "categories": [
+        "actualites",
+        "best-cases"
+      ],
+      "tags": [
+        "etudes",
+        "offre",
+        "offres"
+      ]
+    },
+    "featured_image": {
+      "url": "https://163.172.238.144/content/uploads/2015/04/iStock_000018974535_Medium.jpg"
+    },
+    "json_ld_types": [
+      null,
+      "Article",
+      "WebPage",
+      "ImageObject",
+      "BreadcrumbList",
+      "WebSite",
+      "Person"
+    ],
+    "article_schema": {
+      "headline": "Reuters Institute Digital News Report 2015 : 20 Minutes la marque d&#8217;info la plus utilisée chaque semaine en France",
+      "datePublished": "2015-04-10T06:51:36+00:00",
+      "dateModified": "2015-07-20T13:32:01+00:00",
+      "author": {
+        "name": "Anne Baron",
+        "@id": "https://www.20minutes-media.com/#/schema/person/4caa20980ee368138822218410c43e92"
+      },
+      "image": {
+        "@id": "https://163.172.238.144/actualites/reuters-institute-20-minutes-2e-marque-la-plus-utilisee-pour-sinformer-en-ligne#primaryimage"
+      },
+      "articleSection": [
+        "Actualités",
+        "actualités en une"
+      ],
+      "keywords": [
+        "Études"
+      ]
+    },
+    "main_selector": null,
+    "block_counts": {
+      "h1": 0,
+      "h2": 0,
+      "h3": 0,
+      "h4": 0,
+      "p": 6,
+      "figure": 0,
+      "img": 9,
+      "blockquote": 0,
+      "iframe": 1,
+      "ul": 2,
+      "ol": 0,
+      "li": 13,
+      "table": 0,
+      "a": 35,
+      "div": 33
+    },
+    "image_count": 9,
+    "image_sample": [
+      "https://www.20minutes-media.com/content/themes/20mm/assets/img/front/logo-20mm-purple.png",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2015/04/iStock_000018974535_Medium-1000x450.jpg",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2026/05/Design-sans-titre-16-705x320.png"
+    ]
+  },
+  {
+    "kind": "post/etudes",
+    "url": "https://www.20minutes-media.com/etudes/dela-de-laudience-lattachement-francais-aux-marques-dinfo",
+    "slug": "dela-de-laudience-lattachement-francais-aux-marques-dinfo",
+    "http_status": 200,
+    "title": "Au-delà de l’audience, l’attachement des Français aux marques d’info - 20 Minutes Media",
+    "meta_description": null,
+    "canonical": "https://163.172.238.144/etudes/dela-de-laudience-lattachement-francais-aux-marques-dinfo",
+    "og": {
+      "og:locale": "fr_FR",
+      "og:type": "article",
+      "og:title": "Au-delà de l’audience, l’attachement des Français aux marques d’info - 20 Minutes Media",
+      "og:description": "Étude Harris Interactive pour 20 Minutes : Au-delà de l’audience, l’attachement des Français aux marques d’info Ultra puissante sur l’ensemble de ses supports, avec chaque mois près de 22,5 d’utilisateurs, […]",
+      "og:url": "https://163.172.238.144/etudes/dela-de-laudience-lattachement-francais-aux-marques-dinfo",
+      "og:site_name": "20 Minutes Media",
+      "og:image": "https://163.172.238.144/content/uploads/2017/05/étude-harris.png",
+      "og:image:width": "1103",
+      "og:image:height": "736",
+      "og:image:type": "image/png"
+    },
+    "twitter": {
+      "twitter:label1": "Écrit par",
+      "twitter:data1": "Anne Baron",
+      "twitter:label2": "Durée de lecture estimée",
+      "twitter:data2": "2 minutes"
+    },
+    "body_class": "wp-singular post-template-default single single-post postid-83393 single-format-standard wp-theme-20mm wp-child-theme-20mm-argu cookies-not-set",
+    "h1": [],
+    "author_slug": null,
+    "terms": {
+      "categories": [
+        "actualites",
+        "best-cases"
+      ],
+      "tags": [
+        "offre",
+        "offres"
+      ]
+    },
+    "featured_image": {
+      "url": "https://163.172.238.144/content/uploads/2017/05/étude-harris.png"
+    },
+    "json_ld_types": [
+      null,
+      "Article",
+      "WebPage",
+      "ImageObject",
+      "BreadcrumbList",
+      "WebSite",
+      "Person"
+    ],
+    "article_schema": {
+      "headline": "Au-delà de l’audience, l’attachement des Français aux marques d’info",
+      "datePublished": "2017-05-31T12:58:32+00:00",
+      "dateModified": "2017-07-07T09:02:47+00:00",
+      "author": {
+        "name": "Anne Baron",
+        "@id": "https://www.20minutes-media.com/#/schema/person/4caa20980ee368138822218410c43e92"
+      },
+      "image": {
+        "@id": "https://163.172.238.144/etudes/dela-de-laudience-lattachement-francais-aux-marques-dinfo#primaryimage"
+      },
+      "articleSection": [
+        "Actualités",
+        "actualités en une",
+        "Études"
+      ],
+      "keywords": null
+    },
+    "main_selector": null,
+    "block_counts": {
+      "h1": 0,
+      "h2": 0,
+      "h3": 1,
+      "h4": 0,
+      "p": 20,
+      "figure": 0,
+      "img": 13,
+      "blockquote": 0,
+      "iframe": 1,
+      "ul": 2,
+      "ol": 0,
+      "li": 13,
+      "table": 0,
+      "a": 33,
+      "div": 33
+    },
+    "image_count": 13,
+    "image_sample": [
+      "https://www.20minutes-media.com/content/themes/20mm/assets/img/front/logo-20mm-purple.png",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2017/05/étude-harris-1000x450.png",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://20minutes.clic-clic-network.com/wp-content/uploads/2017/05/ranking-préféré-400x138.jpg"
+    ]
+  },
+  {
+    "kind": "category",
+    "url": "https://www.20minutes-media.com/archives/actualites",
+    "slug": "actualites",
+    "http_status": 200,
+    "title": "Actualités Archives - 20 Minutes Media",
+    "meta_description": null,
+    "canonical": "https://www.20minutes-media.com/archives/actualites",
+    "og": {
+      "og:locale": "fr_FR",
+      "og:type": "article",
+      "og:title": "Actualités Archives - 20 Minutes Media",
+      "og:url": "https://www.20minutes-media.com/archives/actualites",
+      "og:site_name": "20 Minutes Media"
+    },
+    "twitter": {},
+    "body_class": "archive category category-actualites category-4 wp-theme-20mm wp-child-theme-20mm-argu cookies-not-set",
+    "h1": [],
+    "author_slug": null,
+    "terms": {
+      "categories": [
+        "best-cases"
+      ],
+      "tags": [
+        "offre",
+        "offres"
+      ]
+    },
+    "featured_image": null,
+    "json_ld_types": [
+      null,
+      "CollectionPage",
+      "ImageObject",
+      "BreadcrumbList",
+      "WebSite"
+    ],
+    "main_selector": null,
+    "block_counts": {
+      "h1": 0,
+      "h2": 0,
+      "h3": 0,
+      "h4": 0,
+      "p": 0,
+      "figure": 0,
+      "img": 11,
+      "blockquote": 0,
+      "iframe": 1,
+      "ul": 2,
+      "ol": 0,
+      "li": 13,
+      "table": 0,
+      "a": 37,
+      "div": 35
+    },
+    "image_count": 11,
+    "image_sample": [
+      "https://www.20minutes-media.com/content/themes/20mm/assets/img/front/logo-20mm-purple.png",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2026/05/Design-sans-titre-16-705x320.png",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2026/04/Design-sans-titre-1-705x320.png"
+    ]
+  },
+  {
+    "kind": "category",
+    "url": "https://www.20minutes-media.com/archives/best-cases",
+    "slug": "best-cases",
+    "http_status": 200,
+    "title": "Best cases Archives - 20 Minutes Media",
+    "meta_description": null,
+    "canonical": "https://www.20minutes-media.com/archives/best-cases",
+    "og": {
+      "og:locale": "fr_FR",
+      "og:type": "article",
+      "og:title": "Best cases Archives - 20 Minutes Media",
+      "og:url": "https://www.20minutes-media.com/archives/best-cases",
+      "og:site_name": "20 Minutes Media"
+    },
+    "twitter": {},
+    "body_class": "archive category category-best-cases category-9 wp-theme-20mm wp-child-theme-20mm-argu cookies-not-set",
+    "h1": [],
+    "author_slug": null,
+    "terms": {
+      "categories": [
+        "best-cases"
+      ],
+      "tags": []
+    },
+    "featured_image": null,
+    "json_ld_types": [
+      null,
+      "CollectionPage",
+      "ImageObject",
+      "BreadcrumbList",
+      "WebSite"
+    ],
+    "main_selector": null,
+    "block_counts": {
+      "h1": 0,
+      "h2": 12,
+      "h3": 0,
+      "h4": 0,
+      "p": 79,
+      "figure": 0,
+      "img": 2,
+      "blockquote": 0,
+      "iframe": 1,
+      "ul": 5,
+      "ol": 0,
+      "li": 41,
+      "table": 0,
+      "a": 100,
+      "div": 184
+    },
+    "image_count": 2,
+    "image_sample": [
+      "https://www.20minutes-media.com/content/themes/20mm/assets/img/front/logo-20mm-purple.png",
+      "https://www.20minutes-media.com/content/themes/20mm/assets/img/front/cross.png"
+    ]
+  },
+  {
+    "kind": "post_tag",
+    "url": "https://www.20minutes-media.com/rubrique/audience",
+    "slug": "audience",
+    "http_status": 200,
+    "title": "Audience Archives - 20 Minutes Media",
+    "meta_description": null,
+    "canonical": "https://163.172.238.144/rubrique/audience",
+    "og": {
+      "og:locale": "fr_FR",
+      "og:type": "article",
+      "og:title": "Audience Archives - 20 Minutes Media",
+      "og:url": "https://163.172.238.144/rubrique/audience",
+      "og:site_name": "20 Minutes Media"
+    },
+    "twitter": {},
+    "body_class": "archive tag tag-audience tag-3 wp-theme-20mm wp-child-theme-20mm-argu cookies-not-set",
+    "h1": [],
+    "author_slug": null,
+    "terms": {
+      "categories": [
+        "best-cases"
+      ],
+      "tags": [
+        "audience"
+      ]
+    },
+    "featured_image": null,
+    "json_ld_types": [
+      null,
+      "CollectionPage",
+      "ImageObject",
+      "BreadcrumbList",
+      "WebSite"
+    ],
+    "main_selector": null,
+    "block_counts": {
+      "h1": 0,
+      "h2": 0,
+      "h3": 0,
+      "h4": 0,
+      "p": 0,
+      "figure": 0,
+      "img": 11,
+      "blockquote": 0,
+      "iframe": 1,
+      "ul": 2,
+      "ol": 0,
+      "li": 13,
+      "table": 0,
+      "a": 37,
+      "div": 35
+    },
+    "image_count": 11,
+    "image_sample": [
+      "https://www.20minutes-media.com/content/themes/20mm/assets/img/front/logo-20mm-purple.png",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2024/05/Design-sans-titre-7-1-705x320.png",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2022/12/2022-09-Influence-argu.pptx_Page_01-scaled-1-705x320.jpg"
+    ]
+  },
+  {
+    "kind": "post_tag",
+    "url": "https://www.20minutes-media.com/rubrique/moijeune",
+    "slug": "moijeune",
+    "http_status": 200,
+    "title": "#MoiJeune Archives - 20 Minutes Media",
+    "meta_description": null,
+    "canonical": "https://163.172.238.144/rubrique/moijeune",
+    "og": {
+      "og:locale": "fr_FR",
+      "og:type": "article",
+      "og:title": "#MoiJeune Archives - 20 Minutes Media",
+      "og:url": "https://163.172.238.144/rubrique/moijeune",
+      "og:site_name": "20 Minutes Media"
+    },
+    "twitter": {},
+    "body_class": "archive tag tag-moijeune tag-45 wp-theme-20mm wp-child-theme-20mm-argu cookies-not-set",
+    "h1": [],
+    "author_slug": null,
+    "terms": {
+      "categories": [
+        "best-cases"
+      ],
+      "tags": [
+        "moijeune"
+      ]
+    },
+    "featured_image": null,
+    "json_ld_types": [
+      null,
+      "CollectionPage",
+      "ImageObject",
+      "BreadcrumbList",
+      "WebSite"
+    ],
+    "main_selector": null,
+    "block_counts": {
+      "h1": 0,
+      "h2": 0,
+      "h3": 0,
+      "h4": 0,
+      "p": 0,
+      "figure": 0,
+      "img": 5,
+      "blockquote": 0,
+      "iframe": 1,
+      "ul": 2,
+      "ol": 0,
+      "li": 13,
+      "table": 0,
+      "a": 24,
+      "div": 23
+    },
+    "image_count": 5,
+    "image_sample": [
+      "https://www.20minutes-media.com/content/themes/20mm/assets/img/front/logo-20mm-purple.png",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2021/03/Girls_Page_1-scaled-1-705x320.jpg",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2018/12/selfie-1-LIGHT-1-705x320.jpg"
+    ]
+  },
+  {
+    "kind": "author",
+    "url": "https://www.20minutes-media.com/author/eking20minutes-fr",
+    "slug": "eking20minutes-fr",
+    "http_status": 200,
+    "title": "Émilie King, Auteur à 20 Minutes Media",
+    "meta_description": null,
+    "canonical": "https://163.172.238.144/author/eking20minutes-fr",
+    "og": {
+      "og:locale": "fr_FR",
+      "og:type": "profile",
+      "og:title": "Émilie King, Auteur à 20 Minutes Media",
+      "og:url": "https://163.172.238.144/author/eking20minutes-fr",
+      "og:site_name": "20 Minutes Media",
+      "og:image": "https://secure.gravatar.com/avatar/c9f066ea092d2fe2cf4063f2ee2049b1c0226432191ae0c9c0c4d8fcb2dfb296?s=500&d=mm&r=g"
+    },
+    "twitter": {},
+    "body_class": "archive author author-eking20minutes-fr author-13 wp-theme-20mm wp-child-theme-20mm-argu cookies-not-set",
+    "h1": [],
+    "author_slug": null,
+    "terms": {
+      "categories": [
+        "best-cases"
+      ],
+      "tags": [
+        "offre",
+        "offres"
+      ]
+    },
+    "featured_image": {
+      "url": "https://secure.gravatar.com/avatar/c9f066ea092d2fe2cf4063f2ee2049b1c0226432191ae0c9c0c4d8fcb2dfb296?s=500&d=mm&r=g"
+    },
+    "json_ld_types": [
+      null,
+      "ProfilePage",
+      "ImageObject",
+      "BreadcrumbList",
+      "WebSite",
+      "Person"
+    ],
+    "main_selector": null,
+    "block_counts": {
+      "h1": 0,
+      "h2": 0,
+      "h3": 0,
+      "h4": 0,
+      "p": 0,
+      "figure": 0,
+      "img": 11,
+      "blockquote": 0,
+      "iframe": 1,
+      "ul": 2,
+      "ol": 0,
+      "li": 13,
+      "table": 0,
+      "a": 37,
+      "div": 35
+    },
+    "image_count": 11,
+    "image_sample": [
+      "https://www.20minutes-media.com/content/themes/20mm/assets/img/front/logo-20mm-purple.png",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2026/05/Design-sans-titre-16-705x320.png",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2026/04/Design-sans-titre-1-705x320.png"
+    ]
+  },
+  {
+    "kind": "home",
+    "url": "https://www.20minutes-media.com/",
+    "slug": "www.20minutes-media.com",
+    "http_status": 200,
+    "title": "20 Minutes Media - La marque des actifs urbains",
+    "meta_description": "La marque des actifs urbains",
+    "canonical": "https://www.20minutes-media.com/",
+    "og": {
+      "og:locale": "fr_FR",
+      "og:type": "website",
+      "og:title": "20 Minutes Media",
+      "og:description": "La marque des actifs urbains",
+      "og:url": "https://www.20minutes-media.com/",
+      "og:site_name": "20 Minutes Media"
+    },
+    "twitter": {},
+    "body_class": "home blog wp-theme-20mm wp-child-theme-20mm-argu cookies-not-set",
+    "h1": [],
+    "author_slug": null,
+    "terms": {
+      "categories": [
+        "actualites",
+        "best-cases"
+      ],
+      "tags": [
+        "offre",
+        "offres"
+      ]
+    },
+    "featured_image": null,
+    "json_ld_types": [
+      null,
+      "CollectionPage",
+      "BreadcrumbList",
+      "WebSite"
+    ],
+    "main_selector": null,
+    "block_counts": {
+      "h1": 0,
+      "h2": 0,
+      "h3": 0,
+      "h4": 0,
+      "p": 1,
+      "figure": 0,
+      "img": 28,
+      "blockquote": 0,
+      "iframe": 1,
+      "ul": 2,
+      "ol": 0,
+      "li": 13,
+      "table": 0,
+      "a": 55,
+      "div": 72
+    },
+    "image_count": 28,
+    "image_sample": [
+      "https://www.20minutes-media.com/content/themes/20mm/assets/img/front/logo-20mm-purple.png",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2025/03/MOIJEUNE-2-705x320.png",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "https://www.20minutes-media.com/content/uploads/2024/06/Design-sans-titre-1-705x320.png"
+    ]
+  }
+]

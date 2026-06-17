@@ -1,0 +1,27 @@
+# Changelog
+
+## 2026-06-17
+
+- Initial workspace created
+
+
+## 2026-06-17
+
+Researched 20minutes-media.com (WordPress+Yoast) via scripts; captured evidence in sources/. Wrote SQLite-backed GraphQL mock design + intern implementation guide. Started diary.
+
+### Related Files
+
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/ttmp/2026/06/17/FAKE-CMS--fake-internal-cms-graphql-api-20minutes-style-for-ssg-workshop/design-doc/01-fake-cms-graphql-api-design-implementation-guide.md — Primary deliverable
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/ttmp/2026/06/17/FAKE-CMS--fake-internal-cms-graphql-api-20minutes-style-for-ssg-workshop/reference/01-investigation-diary.md — Investigation diary
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/ttmp/2026/06/17/FAKE-CMS--fake-internal-cms-graphql-api-20minutes-style-for-ssg-workshop/sources/00-sitemap-inventory.md — Proves WP+Yoast and post-type/taxonomy surface
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/ttmp/2026/06/17/FAKE-CMS--fake-internal-cms-graphql-api-20minutes-style-for-ssg-workshop/sources/03-article-blocks.md — Article type + Block union modeled from this
+
+
+## 2026-06-17
+
+Validated (doctor clean), added frontmatter to sources/, uploaded design+diary bundle to reMarkable at /ai/2026/06/17/FAKE-CMS.
+
+### Related Files
+
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/ttmp/2026/06/17/FAKE-CMS--fake-internal-cms-graphql-api-20minutes-style-for-ssg-workshop/design-doc/01-fake-cms-graphql-api-design-implementation-guide.md — Uploaded to reMarkable
+

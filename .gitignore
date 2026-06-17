@@ -1,0 +1,17 @@
+# Build artifacts
+/cms.db
+/*.db
+/coverage.out
+/dist/
+
+# Go
+*.test
+*.out
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+.vscode/

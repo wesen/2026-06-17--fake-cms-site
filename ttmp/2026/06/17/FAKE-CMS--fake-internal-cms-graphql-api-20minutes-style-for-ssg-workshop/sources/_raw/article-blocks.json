@@ -1,0 +1,952 @@
+[
+  {
+    "kind": "best-cases",
+    "url": "https://www.20minutes-media.com/best-cases/suez-environnement-2",
+    "content_selector": "div",
+    "content_class": "",
+    "resolved_article_schema": {
+      "@type": "Article",
+      "@id": "https://quiz.20minutes.fr/best-cases/suez-environnement-2#article",
+      "isPartOf": {
+        "@type": "WebPage",
+        "@id": "https://quiz.20minutes.fr/best-cases/suez-environnement-2",
+        "url": "https://quiz.20minutes.fr/best-cases/suez-environnement-2",
+        "name": "Suez Environnement - 20 Minutes Media",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://www.20minutes-media.com/#website",
+          "url": "https://www.20minutes-media.com/",
+          "name": "20 Minutes Media",
+          "description": "La marque des actifs urbains",
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://www.20minutes-media.com/?s={search_term_string}"
+              },
+              "query-input": {
+                "@type": "PropertyValueSpecification",
+                "valueRequired": true,
+                "valueName": "search_term_string"
+              }
+            }
+          ],
+          "inLanguage": "fr-FR"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "inLanguage": "fr-FR",
+          "@id": "https://quiz.20minutes.fr/best-cases/suez-environnement-2#primaryimage",
+          "url": "https://www.20minutes-media.com/content/uploads/2013/11/vignette-1.jpg",
+          "contentUrl": "https://www.20minutes-media.com/content/uploads/2013/11/vignette-1.jpg",
+          "width": 1000,
+          "height": 500,
+          "caption": "Suez 20 Minutes"
+        },
+        "image": {
+          "@type": "ImageObject",
+          "inLanguage": "fr-FR",
+          "@id": "https://quiz.20minutes.fr/best-cases/suez-environnement-2#primaryimage",
+          "url": "https://www.20minutes-media.com/content/uploads/2013/11/vignette-1.jpg",
+          "contentUrl": "https://www.20minutes-media.com/content/uploads/2013/11/vignette-1.jpg",
+          "width": 1000,
+          "height": 500,
+          "caption": "Suez 20 Minutes"
+        },
+        "thumbnailUrl": "https://www.20minutes-media.com/content/uploads/2013/11/vignette-1.jpg",
+        "datePublished": "2013-11-19T11:11:20+00:00",
+        "author": {
+          "@type": "Person",
+          "@id": "https://www.20minutes-media.com/#/schema/person/d490bbe33e98f6326c1402a4a5b29f5f",
+          "name": "admin@clic-clic.com",
+          "image": {
+            "@type": "ImageObject",
+            "inLanguage": "fr-FR",
+            "@id": "https://secure.gravatar.com/avatar/b9fe42c24dcad7d33cddee672bb34ee129e21e6278956891e0e068bc93afe7a9?s=96&d=mm&r=g",
+            "url": "https://secure.gravatar.com/avatar/b9fe42c24dcad7d33cddee672bb34ee129e21e6278956891e0e068bc93afe7a9?s=96&d=mm&r=g",
+            "contentUrl": "https://secure.gravatar.com/avatar/b9fe42c24dcad7d33cddee672bb34ee129e21e6278956891e0e068bc93afe7a9?s=96&d=mm&r=g",
+            "caption": "admin@clic-clic.com"
+          },
+          "url": "https://www.20minutes-media.com/author/adminclic-clic-com"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "@id": "https://quiz.20minutes.fr/best-cases/suez-environnement-2#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Accueil",
+              "item": "https://www.20minutes-media.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Suez Environnement"
+            }
+          ]
+        },
+        "inLanguage": "fr-FR",
+        "potentialAction": [
+          {
+            "@type": "ReadAction",
+            "target": [
+              "https://quiz.20minutes.fr/best-cases/suez-environnement-2"
+            ]
+          }
+        ]
+      },
+      "author": {
+        "name": "admin@clic-clic.com",
+        "@id": "https://www.20minutes-media.com/#/schema/person/d490bbe33e98f6326c1402a4a5b29f5f"
+      },
+      "headline": "Suez Environnement",
+      "datePublished": "2013-11-19T11:11:20+00:00",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://quiz.20minutes.fr/best-cases/suez-environnement-2",
+        "url": "https://quiz.20minutes.fr/best-cases/suez-environnement-2",
+        "name": "Suez Environnement - 20 Minutes Media",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://www.20minutes-media.com/#website",
+          "url": "https://www.20minutes-media.com/",
+          "name": "20 Minutes Media",
+          "description": "La marque des actifs urbains",
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://www.20minutes-media.com/?s={search_term_string}"
+              },
+              "query-input": {
+                "@type": "PropertyValueSpecification",
+                "valueRequired": true,
+                "valueName": "search_term_string"
+              }
+            }
+          ],
+          "inLanguage": "fr-FR"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "inLanguage": "fr-FR",
+          "@id": "https://quiz.20minutes.fr/best-cases/suez-environnement-2#primaryimage",
+          "url": "https://www.20minutes-media.com/content/uploads/2013/11/vignette-1.jpg",
+          "contentUrl": "https://www.20minutes-media.com/content/uploads/2013/11/vignette-1.jpg",
+          "width": 1000,
+          "height": 500,
+          "caption": "Suez 20 Minutes"
+        },
+        "image": {
+          "@type": "ImageObject",
+          "inLanguage": "fr-FR",
+          "@id": "https://quiz.20minutes.fr/best-cases/suez-environnement-2#primaryimage",
+          "url": "https://www.20minutes-media.com/content/uploads/2013/11/vignette-1.jpg",
+          "contentUrl": "https://www.20minutes-media.com/content/uploads/2013/11/vignette-1.jpg",
+          "width": 1000,
+          "height": 500,
+          "caption": "Suez 20 Minutes"
+        },
+        "thumbnailUrl": "https://www.20minutes-media.com/content/uploads/2013/11/vignette-1.jpg",
+        "datePublished": "2013-11-19T11:11:20+00:00",
+        "author": {
+          "@type": "Person",
+          "@id": "https://www.20minutes-media.com/#/schema/person/d490bbe33e98f6326c1402a4a5b29f5f",
+          "name": "admin@clic-clic.com",
+          "image": {
+            "@type": "ImageObject",
+            "inLanguage": "fr-FR",
+            "@id": "https://secure.gravatar.com/avatar/b9fe42c24dcad7d33cddee672bb34ee129e21e6278956891e0e068bc93afe7a9?s=96&d=mm&r=g",
+            "url": "https://secure.gravatar.com/avatar/b9fe42c24dcad7d33cddee672bb34ee129e21e6278956891e0e068bc93afe7a9?s=96&d=mm&r=g",
+            "contentUrl": "https://secure.gravatar.com/avatar/b9fe42c24dcad7d33cddee672bb34ee129e21e6278956891e0e068bc93afe7a9?s=96&d=mm&r=g",
+            "caption": "admin@clic-clic.com"
+          },
+          "url": "https://www.20minutes-media.com/author/adminclic-clic-com"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "@id": "https://quiz.20minutes.fr/best-cases/suez-environnement-2#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Accueil",
+              "item": "https://www.20minutes-media.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Suez Environnement"
+            }
+          ]
+        },
+        "inLanguage": "fr-FR",
+        "potentialAction": [
+          {
+            "@type": "ReadAction",
+            "target": [
+              "https://quiz.20minutes.fr/best-cases/suez-environnement-2"
+            ]
+          }
+        ]
+      },
+      "wordCount": 80,
+      "image": {
+        "@type": "ImageObject",
+        "inLanguage": "fr-FR",
+        "@id": "https://quiz.20minutes.fr/best-cases/suez-environnement-2#primaryimage",
+        "url": "https://www.20minutes-media.com/content/uploads/2013/11/vignette-1.jpg",
+        "contentUrl": "https://www.20minutes-media.com/content/uploads/2013/11/vignette-1.jpg",
+        "width": 1000,
+        "height": 500,
+        "caption": "Suez 20 Minutes"
+      },
+      "thumbnailUrl": "https://www.20minutes-media.com/content/uploads/2013/11/vignette-1.jpg",
+      "articleSection": [
+        "Best cases"
+      ],
+      "inLanguage": "fr-FR"
+    },
+    "block_count": 2,
+    "block_types": {
+      "group": 2
+    },
+    "blocks": [
+      {
+        "type": "group",
+        "tag": "div",
+        "text_chars": 40,
+        "text_preview": "HBO MAX Février 2026 Lire le cas d’étude",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "group",
+        "tag": "div",
+        "text_chars": 384,
+        "text_preview": "Le Contexte : À l’occasion de la sortie de la série, HBOMAX s’associe à 20 Minut",
+        "has_image": false,
+        "has_embed": false
+      }
+    ],
+    "images": [],
+    "image_count": 0
+  },
+  {
+    "kind": "actualites",
+    "url": "https://www.20minutes-media.com/actualites/reuters-institute-20-minutes-2e-marque-la-plus-utilisee-pour-sinformer-en-ligne",
+    "content_selector": "div",
+    "content_class": "",
+    "resolved_article_schema": {
+      "@type": "Article",
+      "@id": "https://163.172.238.144/actualites/reuters-institute-20-minutes-2e-marque-la-plus-utilisee-pour-sinformer-en-ligne#article",
+      "isPartOf": {
+        "@type": "WebPage",
+        "@id": "https://163.172.238.144/actualites/reuters-institute-20-minutes-2e-marque-la-plus-utilisee-pour-sinformer-en-ligne",
+        "url": "https://163.172.238.144/actualites/reuters-institute-20-minutes-2e-marque-la-plus-utilisee-pour-sinformer-en-ligne",
+        "name": "Reuters Institute Digital News Report 2015 : 20 Minutes la marque d'info la plus utilisée chaque semaine en France - 20 Minutes Media",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://www.20minutes-media.com/#website",
+          "url": "https://www.20minutes-media.com/",
+          "name": "20 Minutes Media",
+          "description": "La marque des actifs urbains",
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://www.20minutes-media.com/?s={search_term_string}"
+              },
+              "query-input": {
+                "@type": "PropertyValueSpecification",
+                "valueRequired": true,
+                "valueName": "search_term_string"
+              }
+            }
+          ],
+          "inLanguage": "fr-FR"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "inLanguage": "fr-FR",
+          "@id": "https://163.172.238.144/actualites/reuters-institute-20-minutes-2e-marque-la-plus-utilisee-pour-sinformer-en-ligne#primaryimage",
+          "url": "https://www.20minutes-media.com/content/uploads/2015/04/iStock_000018974535_Medium.jpg",
+          "contentUrl": "https://www.20minutes-media.com/content/uploads/2015/04/iStock_000018974535_Medium.jpg",
+          "width": 1200,
+          "height": 774
+        },
+        "image": {
+          "@type": "ImageObject",
+          "inLanguage": "fr-FR",
+          "@id": "https://163.172.238.144/actualites/reuters-institute-20-minutes-2e-marque-la-plus-utilisee-pour-sinformer-en-ligne#primaryimage",
+          "url": "https://www.20minutes-media.com/content/uploads/2015/04/iStock_000018974535_Medium.jpg",
+          "contentUrl": "https://www.20minutes-media.com/content/uploads/2015/04/iStock_000018974535_Medium.jpg",
+          "width": 1200,
+          "height": 774
+        },
+        "thumbnailUrl": "https://www.20minutes-media.com/content/uploads/2015/04/iStock_000018974535_Medium.jpg",
+        "datePublished": "2015-04-10T06:51:36+00:00",
+        "dateModified": "2015-07-20T13:32:01+00:00",
+        "author": {
+          "@type": "Person",
+          "@id": "https://www.20minutes-media.com/#/schema/person/4caa20980ee368138822218410c43e92",
+          "name": "Anne Baron",
+          "image": {
+            "@type": "ImageObject",
+            "inLanguage": "fr-FR",
+            "@id": "https://secure.gravatar.com/avatar/c214a9453e907343d2159548ee40d1fc2856687878b9b7ba26fe1741f04b8f8f?s=96&d=mm&r=g",
+            "url": "https://secure.gravatar.com/avatar/c214a9453e907343d2159548ee40d1fc2856687878b9b7ba26fe1741f04b8f8f?s=96&d=mm&r=g",
+            "contentUrl": "https://secure.gravatar.com/avatar/c214a9453e907343d2159548ee40d1fc2856687878b9b7ba26fe1741f04b8f8f?s=96&d=mm&r=g",
+            "caption": "Anne Baron"
+          },
+          "sameAs": [
+            "https://www.20minutes-media.com"
+          ],
+          "url": "https://www.20minutes-media.com/author/abaron"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "@id": "https://163.172.238.144/actualites/reuters-institute-20-minutes-2e-marque-la-plus-utilisee-pour-sinformer-en-ligne#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Accueil",
+              "item": "https://www.20minutes-media.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Reuters Institute Digital News Report 2015 : 20 Minutes la marque d&#8217;info la plus utilisée chaque semaine en France"
+            }
+          ]
+        },
+        "inLanguage": "fr-FR",
+        "potentialAction": [
+          {
+            "@type": "ReadAction",
+            "target": [
+              "https://163.172.238.144/actualites/reuters-institute-20-minutes-2e-marque-la-plus-utilisee-pour-sinformer-en-ligne"
+            ]
+          }
+        ]
+      },
+      "author": {
+        "name": "Anne Baron",
+        "@id": "https://www.20minutes-media.com/#/schema/person/4caa20980ee368138822218410c43e92"
+      },
+      "headline": "Reuters Institute Digital News Report 2015 : 20 Minutes la marque d&#8217;info la plus utilisée chaque semaine en France",
+      "datePublished": "2015-04-10T06:51:36+00:00",
+      "dateModified": "2015-07-20T13:32:01+00:00",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://163.172.238.144/actualites/reuters-institute-20-minutes-2e-marque-la-plus-utilisee-pour-sinformer-en-ligne",
+        "url": "https://163.172.238.144/actualites/reuters-institute-20-minutes-2e-marque-la-plus-utilisee-pour-sinformer-en-ligne",
+        "name": "Reuters Institute Digital News Report 2015 : 20 Minutes la marque d'info la plus utilisée chaque semaine en France - 20 Minutes Media",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://www.20minutes-media.com/#website",
+          "url": "https://www.20minutes-media.com/",
+          "name": "20 Minutes Media",
+          "description": "La marque des actifs urbains",
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://www.20minutes-media.com/?s={search_term_string}"
+              },
+              "query-input": {
+                "@type": "PropertyValueSpecification",
+                "valueRequired": true,
+                "valueName": "search_term_string"
+              }
+            }
+          ],
+          "inLanguage": "fr-FR"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "inLanguage": "fr-FR",
+          "@id": "https://163.172.238.144/actualites/reuters-institute-20-minutes-2e-marque-la-plus-utilisee-pour-sinformer-en-ligne#primaryimage",
+          "url": "https://www.20minutes-media.com/content/uploads/2015/04/iStock_000018974535_Medium.jpg",
+          "contentUrl": "https://www.20minutes-media.com/content/uploads/2015/04/iStock_000018974535_Medium.jpg",
+          "width": 1200,
+          "height": 774
+        },
+        "image": {
+          "@type": "ImageObject",
+          "inLanguage": "fr-FR",
+          "@id": "https://163.172.238.144/actualites/reuters-institute-20-minutes-2e-marque-la-plus-utilisee-pour-sinformer-en-ligne#primaryimage",
+          "url": "https://www.20minutes-media.com/content/uploads/2015/04/iStock_000018974535_Medium.jpg",
+          "contentUrl": "https://www.20minutes-media.com/content/uploads/2015/04/iStock_000018974535_Medium.jpg",
+          "width": 1200,
+          "height": 774
+        },
+        "thumbnailUrl": "https://www.20minutes-media.com/content/uploads/2015/04/iStock_000018974535_Medium.jpg",
+        "datePublished": "2015-04-10T06:51:36+00:00",
+        "dateModified": "2015-07-20T13:32:01+00:00",
+        "author": {
+          "@type": "Person",
+          "@id": "https://www.20minutes-media.com/#/schema/person/4caa20980ee368138822218410c43e92",
+          "name": "Anne Baron",
+          "image": {
+            "@type": "ImageObject",
+            "inLanguage": "fr-FR",
+            "@id": "https://secure.gravatar.com/avatar/c214a9453e907343d2159548ee40d1fc2856687878b9b7ba26fe1741f04b8f8f?s=96&d=mm&r=g",
+            "url": "https://secure.gravatar.com/avatar/c214a9453e907343d2159548ee40d1fc2856687878b9b7ba26fe1741f04b8f8f?s=96&d=mm&r=g",
+            "contentUrl": "https://secure.gravatar.com/avatar/c214a9453e907343d2159548ee40d1fc2856687878b9b7ba26fe1741f04b8f8f?s=96&d=mm&r=g",
+            "caption": "Anne Baron"
+          },
+          "sameAs": [
+            "https://www.20minutes-media.com"
+          ],
+          "url": "https://www.20minutes-media.com/author/abaron"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "@id": "https://163.172.238.144/actualites/reuters-institute-20-minutes-2e-marque-la-plus-utilisee-pour-sinformer-en-ligne#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Accueil",
+              "item": "https://www.20minutes-media.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Reuters Institute Digital News Report 2015 : 20 Minutes la marque d&#8217;info la plus utilisée chaque semaine en France"
+            }
+          ]
+        },
+        "inLanguage": "fr-FR",
+        "potentialAction": [
+          {
+            "@type": "ReadAction",
+            "target": [
+              "https://163.172.238.144/actualites/reuters-institute-20-minutes-2e-marque-la-plus-utilisee-pour-sinformer-en-ligne"
+            ]
+          }
+        ]
+      },
+      "wordCount": 94,
+      "image": {
+        "@type": "ImageObject",
+        "inLanguage": "fr-FR",
+        "@id": "https://163.172.238.144/actualites/reuters-institute-20-minutes-2e-marque-la-plus-utilisee-pour-sinformer-en-ligne#primaryimage",
+        "url": "https://www.20minutes-media.com/content/uploads/2015/04/iStock_000018974535_Medium.jpg",
+        "contentUrl": "https://www.20minutes-media.com/content/uploads/2015/04/iStock_000018974535_Medium.jpg",
+        "width": 1200,
+        "height": 774
+      },
+      "thumbnailUrl": "https://www.20minutes-media.com/content/uploads/2015/04/iStock_000018974535_Medium.jpg",
+      "keywords": [
+        "Études"
+      ],
+      "articleSection": [
+        "Actualités",
+        "actualités en une"
+      ],
+      "inLanguage": "fr-FR"
+    },
+    "block_count": 7,
+    "block_types": {
+      "group": 2,
+      "paragraph": 5
+    },
+    "blocks": [
+      {
+        "type": "group",
+        "tag": "div",
+        "text_chars": 114,
+        "text_preview": "Reuters Institute Digital News Report 2015 : 20 Minutes la marque d’info la plus",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 147,
+        "text_preview": "Le nouveau rapport mondial sur la consommation de l’info dans le monde réalisé p",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 110,
+        "text_preview": "20 Minutes se classe cette année n°1 des marques d’info les plus utilisées en Fr",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 144,
+        "text_preview": "Offline, 20 Minutes est toujours en haut du classement parmi les radios et les T",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 26,
+        "text_preview": "Télécharger le rapport ici",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 17,
+        "text_preview": "Zoom France : ici",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "group",
+        "tag": "div",
+        "text_chars": 0,
+        "text_preview": "",
+        "has_image": false,
+        "has_embed": false
+      }
+    ],
+    "images": [],
+    "image_count": 0
+  },
+  {
+    "kind": "etudes",
+    "url": "https://www.20minutes-media.com/etudes/dela-de-laudience-lattachement-francais-aux-marques-dinfo",
+    "content_selector": "div",
+    "content_class": "",
+    "resolved_article_schema": {
+      "@type": "Article",
+      "@id": "https://163.172.238.144/etudes/dela-de-laudience-lattachement-francais-aux-marques-dinfo#article",
+      "isPartOf": {
+        "@type": "WebPage",
+        "@id": "https://163.172.238.144/etudes/dela-de-laudience-lattachement-francais-aux-marques-dinfo",
+        "url": "https://163.172.238.144/etudes/dela-de-laudience-lattachement-francais-aux-marques-dinfo",
+        "name": "Au-delà de l’audience, l’attachement des Français aux marques d’info - 20 Minutes Media",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://www.20minutes-media.com/#website",
+          "url": "https://www.20minutes-media.com/",
+          "name": "20 Minutes Media",
+          "description": "La marque des actifs urbains",
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://www.20minutes-media.com/?s={search_term_string}"
+              },
+              "query-input": {
+                "@type": "PropertyValueSpecification",
+                "valueRequired": true,
+                "valueName": "search_term_string"
+              }
+            }
+          ],
+          "inLanguage": "fr-FR"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "inLanguage": "fr-FR",
+          "@id": "https://163.172.238.144/etudes/dela-de-laudience-lattachement-francais-aux-marques-dinfo#primaryimage",
+          "url": "https://www.20minutes-media.com/content/uploads/2017/05/étude-harris.png",
+          "contentUrl": "https://www.20minutes-media.com/content/uploads/2017/05/étude-harris.png",
+          "width": 1103,
+          "height": 736
+        },
+        "image": {
+          "@type": "ImageObject",
+          "inLanguage": "fr-FR",
+          "@id": "https://163.172.238.144/etudes/dela-de-laudience-lattachement-francais-aux-marques-dinfo#primaryimage",
+          "url": "https://www.20minutes-media.com/content/uploads/2017/05/étude-harris.png",
+          "contentUrl": "https://www.20minutes-media.com/content/uploads/2017/05/étude-harris.png",
+          "width": 1103,
+          "height": 736
+        },
+        "thumbnailUrl": "https://www.20minutes-media.com/content/uploads/2017/05/étude-harris.png",
+        "datePublished": "2017-05-31T12:58:32+00:00",
+        "dateModified": "2017-07-07T09:02:47+00:00",
+        "author": {
+          "@type": "Person",
+          "@id": "https://www.20minutes-media.com/#/schema/person/4caa20980ee368138822218410c43e92",
+          "name": "Anne Baron",
+          "image": {
+            "@type": "ImageObject",
+            "inLanguage": "fr-FR",
+            "@id": "https://secure.gravatar.com/avatar/c214a9453e907343d2159548ee40d1fc2856687878b9b7ba26fe1741f04b8f8f?s=96&d=mm&r=g",
+            "url": "https://secure.gravatar.com/avatar/c214a9453e907343d2159548ee40d1fc2856687878b9b7ba26fe1741f04b8f8f?s=96&d=mm&r=g",
+            "contentUrl": "https://secure.gravatar.com/avatar/c214a9453e907343d2159548ee40d1fc2856687878b9b7ba26fe1741f04b8f8f?s=96&d=mm&r=g",
+            "caption": "Anne Baron"
+          },
+          "sameAs": [
+            "https://www.20minutes-media.com"
+          ],
+          "url": "https://www.20minutes-media.com/author/abaron"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "@id": "https://163.172.238.144/etudes/dela-de-laudience-lattachement-francais-aux-marques-dinfo#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Accueil",
+              "item": "https://www.20minutes-media.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Au-delà de l’audience, l’attachement des Français aux marques d’info"
+            }
+          ]
+        },
+        "inLanguage": "fr-FR",
+        "potentialAction": [
+          {
+            "@type": "ReadAction",
+            "target": [
+              "https://163.172.238.144/etudes/dela-de-laudience-lattachement-francais-aux-marques-dinfo"
+            ]
+          }
+        ]
+      },
+      "author": {
+        "name": "Anne Baron",
+        "@id": "https://www.20minutes-media.com/#/schema/person/4caa20980ee368138822218410c43e92"
+      },
+      "headline": "Au-delà de l’audience, l’attachement des Français aux marques d’info",
+      "datePublished": "2017-05-31T12:58:32+00:00",
+      "dateModified": "2017-07-07T09:02:47+00:00",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://163.172.238.144/etudes/dela-de-laudience-lattachement-francais-aux-marques-dinfo",
+        "url": "https://163.172.238.144/etudes/dela-de-laudience-lattachement-francais-aux-marques-dinfo",
+        "name": "Au-delà de l’audience, l’attachement des Français aux marques d’info - 20 Minutes Media",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://www.20minutes-media.com/#website",
+          "url": "https://www.20minutes-media.com/",
+          "name": "20 Minutes Media",
+          "description": "La marque des actifs urbains",
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://www.20minutes-media.com/?s={search_term_string}"
+              },
+              "query-input": {
+                "@type": "PropertyValueSpecification",
+                "valueRequired": true,
+                "valueName": "search_term_string"
+              }
+            }
+          ],
+          "inLanguage": "fr-FR"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "inLanguage": "fr-FR",
+          "@id": "https://163.172.238.144/etudes/dela-de-laudience-lattachement-francais-aux-marques-dinfo#primaryimage",
+          "url": "https://www.20minutes-media.com/content/uploads/2017/05/étude-harris.png",
+          "contentUrl": "https://www.20minutes-media.com/content/uploads/2017/05/étude-harris.png",
+          "width": 1103,
+          "height": 736
+        },
+        "image": {
+          "@type": "ImageObject",
+          "inLanguage": "fr-FR",
+          "@id": "https://163.172.238.144/etudes/dela-de-laudience-lattachement-francais-aux-marques-dinfo#primaryimage",
+          "url": "https://www.20minutes-media.com/content/uploads/2017/05/étude-harris.png",
+          "contentUrl": "https://www.20minutes-media.com/content/uploads/2017/05/étude-harris.png",
+          "width": 1103,
+          "height": 736
+        },
+        "thumbnailUrl": "https://www.20minutes-media.com/content/uploads/2017/05/étude-harris.png",
+        "datePublished": "2017-05-31T12:58:32+00:00",
+        "dateModified": "2017-07-07T09:02:47+00:00",
+        "author": {
+          "@type": "Person",
+          "@id": "https://www.20minutes-media.com/#/schema/person/4caa20980ee368138822218410c43e92",
+          "name": "Anne Baron",
+          "image": {
+            "@type": "ImageObject",
+            "inLanguage": "fr-FR",
+            "@id": "https://secure.gravatar.com/avatar/c214a9453e907343d2159548ee40d1fc2856687878b9b7ba26fe1741f04b8f8f?s=96&d=mm&r=g",
+            "url": "https://secure.gravatar.com/avatar/c214a9453e907343d2159548ee40d1fc2856687878b9b7ba26fe1741f04b8f8f?s=96&d=mm&r=g",
+            "contentUrl": "https://secure.gravatar.com/avatar/c214a9453e907343d2159548ee40d1fc2856687878b9b7ba26fe1741f04b8f8f?s=96&d=mm&r=g",
+            "caption": "Anne Baron"
+          },
+          "sameAs": [
+            "https://www.20minutes-media.com"
+          ],
+          "url": "https://www.20minutes-media.com/author/abaron"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "@id": "https://163.172.238.144/etudes/dela-de-laudience-lattachement-francais-aux-marques-dinfo#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Accueil",
+              "item": "https://www.20minutes-media.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Au-delà de l’audience, l’attachement des Français aux marques d’info"
+            }
+          ]
+        },
+        "inLanguage": "fr-FR",
+        "potentialAction": [
+          {
+            "@type": "ReadAction",
+            "target": [
+              "https://163.172.238.144/etudes/dela-de-laudience-lattachement-francais-aux-marques-dinfo"
+            ]
+          }
+        ]
+      },
+      "wordCount": 427,
+      "image": {
+        "@type": "ImageObject",
+        "inLanguage": "fr-FR",
+        "@id": "https://163.172.238.144/etudes/dela-de-laudience-lattachement-francais-aux-marques-dinfo#primaryimage",
+        "url": "https://www.20minutes-media.com/content/uploads/2017/05/étude-harris.png",
+        "contentUrl": "https://www.20minutes-media.com/content/uploads/2017/05/étude-harris.png",
+        "width": 1103,
+        "height": 736
+      },
+      "thumbnailUrl": "https://www.20minutes-media.com/content/uploads/2017/05/étude-harris.png",
+      "articleSection": [
+        "Actualités",
+        "actualités en une",
+        "Études"
+      ],
+      "inLanguage": "fr-FR"
+    },
+    "block_count": 22,
+    "block_types": {
+      "group": 2,
+      "heading": 1,
+      "paragraph": 19
+    },
+    "blocks": [
+      {
+        "type": "group",
+        "tag": "div",
+        "text_chars": 68,
+        "text_preview": "Au-delà de l’audience, l’attachement des Français aux marques d’info",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "heading",
+        "tag": "h3",
+        "text_chars": 111,
+        "text_preview": "Étude Harris Interactive pour 20 Minutes : Au-delà de l’audience, l’attachement ",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 565,
+        "text_preview": "Ultra puissante sur l’ensemble de ses supports, avec chaque mois près de 22,5 d’",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 0,
+        "text_preview": "",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 59,
+        "text_preview": "Etre puissant c’est bien… être préféré c’est encore mieux !",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 231,
+        "text_preview": "Parmi l’ensemble des Français interrogés, 32% placent 20 Minutes dans leur top 3",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 108,
+        "text_preview": "« Selon l’image que vous en avez, veuillez classer par ordre de préférence les m",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 0,
+        "text_preview": "",
+        "has_image": true,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 0,
+        "text_preview": "",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 44,
+        "text_preview": "20 Minutes : une promesse éditoriale tenue !",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 185,
+        "text_preview": "Pour une très large majorité de Français s’informant avec 20 Minutes, la promess",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 0,
+        "text_preview": "",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 45,
+        "text_preview": "La marque la plus sympa de l’univers « info »",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 246,
+        "text_preview": "L’étude révèle un fort attachement à la marque 20 Minutes puisqu’elle est celle ",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 239,
+        "text_preview": "« Pour chacune de ces caractéristiques, vous nous indiquerez si vous êtes tout à",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 0,
+        "text_preview": "",
+        "has_image": true,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 0,
+        "text_preview": "",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 58,
+        "text_preview": "Un modèle qui plaît dans sa globalité, publicité incluse !",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 411,
+        "text_preview": "Chez 20 Minutes, la publicité est jugée mieux intégrée qu’ailleurs selon 63% des",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 0,
+        "text_preview": "",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "paragraph",
+        "tag": "p",
+        "text_chars": 52,
+        "text_preview": ">> Retrouvez l’ensemble des résultats de cette étude",
+        "has_image": false,
+        "has_embed": false
+      },
+      {
+        "type": "group",
+        "tag": "div",
+        "text_chars": 0,
+        "text_preview": "",
+        "has_image": false,
+        "has_embed": false
+      }
+    ],
+    "images": [
+      {
+        "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+        "alt": "ranking préféré",
+        "width": "400",
+        "height": "138"
+      },
+      {
+        "src": "https://20minutes.clic-clic-network.com/wp-content/uploads/2017/05/ranking-préféré-400x138.jpg",
+        "alt": "ranking préféré",
+        "width": "400",
+        "height": "138"
+      },
+      {
+        "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+        "alt": "sympa",
+        "width": "400",
+        "height": "287"
+      },
+      {
+        "src": "https://20minutes.clic-clic-network.com/wp-content/uploads/2017/05/sympa-400x287.jpg",
+        "alt": "sympa",
+        "width": "400",
+        "height": "287"
+      }
+    ],
+    "image_count": 4
+  }
+]
