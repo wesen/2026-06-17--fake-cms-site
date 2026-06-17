@@ -5,6 +5,8 @@ package cli
 import (
 	"context"
 	"fmt"
+	"log"
+	"os"
 
 	"github.com/go-go-golems/fake-cms/internal/build"
 	"github.com/go-go-golems/glazed/pkg/cli"
@@ -14,6 +16,27 @@ import (
 	"github.com/go-go-golems/glazed/pkg/cmds/values"
 	"github.com/spf13/cobra"
 )
+
+// serveLog writes to stderr so it never collides with structured stdout.
+var serveLog = log.New(os.Stderr, "fake-cms ", log.LstdFlags)
+
+// dbConfig is decoded from the "db" section by decodeDB.
+type dbConfig struct {
+	Path     string `glazed:"path"`
+	Recreate bool   `glazed:"recreate"`
+}
+
+// decodeDB extracts the db section values.
+func decodeDB(v *values.Values) (dbConfig, error) {
+	cfg := dbConfig{Path: "cms.db"}
+	if err := v.DecodeSectionInto("db", &cfg); err != nil {
+		return cfg, err
+	}
+	if cfg.Path == "" {
+		cfg.Path = "cms.db"
+	}
+	return cfg, nil
+}
 
 // DBSection is the shared "database" field section (db path + migrations toggle).
 // It is attached to every subcommand that needs to open SQLite.

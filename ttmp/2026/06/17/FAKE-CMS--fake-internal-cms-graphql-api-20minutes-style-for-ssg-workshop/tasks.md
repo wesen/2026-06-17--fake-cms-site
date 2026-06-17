@@ -20,8 +20,8 @@
 - [x] P3.3 Root Query resolvers: article/page/articles/category/tag/author/media/site + DataLoader wiring
 - [x] P3.4 Article field resolvers: author/categories/tags/featuredMedia/related; Connection helpers
 - [x] P3.5 Golden query fixtures: testdata/queries/*.graphql + *.expected.json; schema Exec E2E test
-- [ ] P4.1 Block union/interface resolvers (paragraph/heading/image/list/quote/embed/gallery)
-- [ ] P4.2 SEO resolver (title/meta/canonical/og/twitter/jsonLd/breadcrumbs) + full-article golden test
+- [x] P4.1 Block union/interface resolvers (paragraph/heading/image/list/quote/embed/gallery)
+- [x] P4.2 SEO resolver (title/meta/canonical/og/twitter/jsonLd/breadcrumbs) + full-article golden test
 - [ ] P5.1 server.New: net/http mux (/graphql, /playground, /healthz) + serve glazed command
 - [ ] P5.2 seed + 'db query' glazed commands (structured output) + README quickstart + workshop contract
 - [ ] P5.3 Smoke: build, run serve, curl a query, golden E2E; finalize diary + reMarkable re-upload

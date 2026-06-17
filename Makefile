@@ -19,10 +19,10 @@ tidy:
 	go mod tidy
 
 seed: build
-	./$(BIN) seed --db-path testdata/cms.db
+	./$(BIN) seed --path testdata/cms.db
 
 serve: build
-	./$(BIN) serve --db-path testdata/cms.db --addr :8080
+	./$(BIN) serve --path testdata/cms.db --http-addr :8080
 
 clean:
 	rm -f $(BIN) coverage.out
