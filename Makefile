@@ -5,11 +5,15 @@ BIN ?= fake-cms
 build:
 	go build -o $(BIN) ./cmd/fake-cms
 
+# build-all excludes the ttmp/ scripts (standalone package main repros).
+build-all:
+	go build $$(go list ./... | grep -v '/ttmp/')
+
 run: build
 	./$(BIN)
 
 test:
-	go test ./... -count=1
+	go test $$(go list ./... | grep -v '/ttmp/') -count=1
 
 tidy:
 	go mod tidy
