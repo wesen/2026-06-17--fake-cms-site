@@ -9,11 +9,14 @@ import (
 	"os"
 
 	"github.com/go-go-golems/fake-cms/internal/build"
+	"github.com/go-go-golems/fake-cms/internal/doc"
 	"github.com/go-go-golems/glazed/pkg/cli"
 	"github.com/go-go-golems/glazed/pkg/cmds"
 	"github.com/go-go-golems/glazed/pkg/cmds/fields"
 	"github.com/go-go-golems/glazed/pkg/cmds/schema"
 	"github.com/go-go-golems/glazed/pkg/cmds/values"
+	helpcmd "github.com/go-go-golems/glazed/pkg/help/cmd"
+	"github.com/go-go-golems/glazed/pkg/help"
 	"github.com/spf13/cobra"
 )
 
@@ -101,6 +104,12 @@ func BuildRootCobra() (*cobra.Command, error) {
 		Short: "Fake internal CMS GraphQL API (SQLite-backed) for the SSG workshop",
 	}
 
+	// Wire the glazed help system: load embedded entries, attach the `help`
+	// command and the rich help/usage templates to the root.
+	if err := setupHelp(root); err != nil {
+		return nil, fmt.Errorf("setup help: %w", err)
+	}
+
 	version, err := cli.BuildCobraCommand(newVersionCmd())
 	if err != nil {
 		return nil, fmt.Errorf("build version command: %w", err)
@@ -119,4 +128,16 @@ func BuildRootCobra() (*cobra.Command, error) {
 	}
 
 	return root, nil
+}
+
+// setupHelp builds the glazed HelpSystem from the embedded doc/*.md entries
+// and attaches it to the root command (the `help` subcommand, rich help/usage
+// templates). This is the canonical glazed initialization path.
+func setupHelp(root *cobra.Command) error {
+	hs := help.NewHelpSystem()
+	if err := hs.LoadSectionsFromFS(doc.FS, "."); err != nil {
+		return err
+	}
+	helpcmd.SetupCobraRootCommand(hs, root)
+	return nil
 }
