@@ -58,3 +58,12 @@ P3 complete: added pure renderBlocks module covering all seven CMS block variant
 
 - /home/manuel/code/wesen/2026-06-17--fake-cms-site/frontend/_config/renderBlocks.cjs — Block renderer used by Eleventy shortcode
 
+
+## 2026-06-18
+
+P4 complete: added project-local fakeCmsPlugin, replaced hardcoded global data with fetchCms+normalizeCms, registered URL/JSON/renderBlocks helpers, and verified real CMS build generates homepage + 140 article pages.
+
+### Related Files
+
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/frontend/_config/fakeCmsPlugin.cjs — Eleventy plugin boundary for CMS data and helpers
+

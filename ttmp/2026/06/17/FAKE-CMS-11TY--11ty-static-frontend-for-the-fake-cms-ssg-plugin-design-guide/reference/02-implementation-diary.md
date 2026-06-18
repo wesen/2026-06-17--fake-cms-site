@@ -542,3 +542,61 @@ The block renderer is deliberately pure JavaScript with unit tests. It does not 
 ### Technical details
 - Unknown block error text: `Unknown CMS block type: <typename>`.
 - Current tests: 8 total across normalization and block rendering.
+
+## Step 9: Wire the project-local plugin to real fake-cms data
+
+This step replaced the scaffold's hardcoded `cms` object with a real project-local Eleventy plugin. The plugin now fetches the seeded GraphQL API, normalizes the result, registers URL/JSON filters, and exposes the tested block renderer as a shortcode. With the seeded backend running, `npm run build` generated the homepage plus all 140 article pages from real CMS data.
+
+This is the first end-to-end static build from the fake CMS. It does not yet render tag/category/author archive pages or a sitemap, but the central data path is complete: fake-cms GraphQL → fetch client → normalizer → Eleventy data cascade → paginated article template → `_site/` files.
+
+**Commit (code):** <pending> — "feat(frontend): wire Eleventy plugin to CMS data"
+
+### What I did
+- Added `frontend/_config/fakeCmsPlugin.cjs`.
+- Rewrote `frontend/eleventy.config.cjs` to register the project-local plugin instead of hardcoded data.
+- Registered filters/shortcodes:
+  - `postTypeSlug`
+  - `pathSegment`
+  - `json`
+  - `absoluteUrl`
+  - `renderBlocks`
+- Updated `frontend/README.md` to document real CMS build commands and backend contract notes.
+- Ran `npm test` successfully.
+- Started `./fake-cms serve --path testdata/cms.db --addr :18080` and ran `CMS_ENDPOINT=http://localhost:18080/graphql npm run build` successfully.
+- Marked P4.1–P4.3 complete.
+
+### Why
+- The plugin is the boundary recommended by the corrected guide: shared data fetching and helper behavior live in `_config`, while page templates remain visible in `src/`.
+- Wiring the real API before adding archive templates reduces risk; article generation is the core path and now works independently.
+
+### What worked
+- The build generated 141 Eleventy pages (homepage + 140 articles) and copied CSS.
+- The output included encoded accented slugs such as `reportage-engag%C3%A9--oenobiol-72`.
+- The seeded dataset is sufficient for development; no extra seeding needed.
+
+### What didn't work
+- No new failures. The build requires a running CMS server, as expected.
+
+### What I learned
+- Eleventy build output is verbose when writing 140 pages; this is useful during development but may warrant `--quiet` in scripted integration tests.
+
+### What was tricky to build
+- The plugin must remain synchronous at registration time while using async global data. The correct pattern is `eleventyConfig.addGlobalData("cms", async () => { ... })`, not an async plugin function.
+- The build is now coupled to the backend process. Integration tests need to start the backend explicitly or skip with a clear message.
+
+### What warrants a second pair of eyes
+- Review whether the plugin should support an offline fixture mode for workshops where the backend is not running. I did not add this because acceptance requires building from `fake-cms serve`.
+
+### What should be done in the future
+- P5 should add visible archive, author, homepage, and sitemap templates using the normalized indexes that already exist.
+
+### Code review instructions
+- Start with `frontend/_config/fakeCmsPlugin.cjs`, then `frontend/eleventy.config.cjs`.
+- Validate with:
+  - `cd frontend && npm test`
+  - `./fake-cms serve --path testdata/cms.db --addr :18080`
+  - `CMS_ENDPOINT=http://localhost:18080/graphql npm run build`
+
+### Technical details
+- Build output: `Copied 2 Wrote 141 files in 0.38 seconds (v3.1.6)`.
+- File count after build: 142 files under `frontend/_site` including copied CSS.

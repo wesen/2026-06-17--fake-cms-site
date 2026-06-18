@@ -31,9 +31,9 @@
 - [x] P3.3 Throw on unknown block types.
 - [x] P3.4 Unit-test every block branch plus unknown-block failure.
 
-- [ ] P4.1 Convert the local plugin to real CMS mode: `addGlobalData("cms", async () => normalizeCms(await fetchCms(...)))`.
-- [ ] P4.2 Register filters/shortcodes: `postTypeSlug`, `pathSegment`, `json`, `absoluteUrl`, `renderBlocks`.
-- [ ] P4.3 Keep the plugin project-local (`frontend/_config/fakeCmsPlugin.cjs`) until the backend schema stabilizes.
+- [x] P4.1 Convert the local plugin to real CMS mode: `addGlobalData("cms", async () => normalizeCms(await fetchCms(...)))`.
+- [x] P4.2 Register filters/shortcodes: `postTypeSlug`, `pathSegment`, `json`, `absoluteUrl`, `renderBlocks`.
+- [x] P4.3 Keep the plugin project-local (`frontend/_config/fakeCmsPlugin.cjs`) until the backend schema stabilizes.
 
 - [ ] P5.1 Add visible Nunjucks templates: `articles.njk`, `tag.njk`, `category.njk`, `author.njk`, `post-type.njk`, `index.njk`, `sitemap.xml.njk`.
 - [ ] P5.2 Add `_includes/base.njk`, `_includes/head.njk`, and reusable cards/partials.
