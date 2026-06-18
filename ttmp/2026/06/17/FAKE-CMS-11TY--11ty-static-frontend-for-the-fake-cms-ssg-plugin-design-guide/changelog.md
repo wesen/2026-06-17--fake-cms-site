@@ -22,3 +22,12 @@ Reviewed the first 11ty guide against Eleventy 3.1.6 and the executable fake-cms
 
 - /home/manuel/code/wesen/2026-06-17--fake-cms-site/ttmp/2026/06/17/FAKE-CMS-11TY--11ty-static-frontend-for-the-fake-cms-ssg-plugin-design-guide/design-doc/02-corrected-11ty-cms-static-site-guide.md — Corrected implementation guide
 
+
+## 2026-06-18
+
+Committed documentation baseline (33c6fa7) and expanded tasks.md into detailed P0-P7 implementation plan plus A1-A6 acceptance gates. Added .gitignore rule for root fake-cms build binary (010c602).
+
+### Related Files
+
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/ttmp/2026/06/17/FAKE-CMS-11TY--11ty-static-frontend-for-the-fake-cms-ssg-plugin-design-guide/tasks.md — Detailed implementation checklist
+

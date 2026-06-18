@@ -297,3 +297,60 @@ The corrected guide keeps the good architecture — Eleventy global data, pagina
 - Backend smoke command: `./fake-cms serve --path testdata/cms.db --addr :18080`.
 - Correct block query pattern: `blocks { __typename ... on Block { id order } ... on ParagraphBlock { text align } ... }`.
 - Correct current list queries: `categories { ... }`, `tags { ... }`, `authors { ... }` with no `first` arguments.
+
+## Step 5: Commit the documentation baseline and expand implementation tasks
+
+This step turned the research package into a clean implementation starting point. I first committed the ticket documentation and sources so the design baseline is recoverable, then replaced the coarse task list with a phase-by-phase checklist that can drive small implementation commits.
+
+The task list now separates scaffolding, GraphQL fetching, normalization, block rendering, plugin wiring, templates, integration tests, and acceptance checks. That matters because the frontend has several independent risk areas: the executable GraphQL schema differs from the aspirational docs, Eleventy pagination is a build-time mechanism, and block rendering needs its own pure tests.
+
+### Prompt Context
+
+**User prompt (verbatim):** "Commit at appropriate intervals, and now commit all the ticket work and documents. Then add detailed tasks to the ticket, and then implement it task by task, keeping a detailed diary as you work.
+
+If the site doesnot contain enough data, feel free to seed more from the 20minutes-media.com research we did."
+
+**Assistant interpretation:** Commit the existing ticket docs first, make the implementation backlog detailed enough to work from, then implement the 11ty frontend in focused commits while updating the diary after each meaningful step.
+
+**Inferred user intent:** The user wants disciplined implementation: no giant unreviewable change, no untracked documentation, and a diary that makes the path understandable for review and continuation.
+
+### What I did
+- Read the git-commit hygiene skill.
+- Observed an untracked built `fake-cms` binary and added `/fake-cms` to `.gitignore`.
+- Committed `.gitignore` as `010c602` — `chore: ignore local fake-cms binary`.
+- Staged and committed the FAKE-CMS-11TY ticket docs, sources, diary, changelog, and vocabulary as `33c6fa7` — `docs: add FAKE-CMS 11ty frontend design ticket`.
+- Rewrote `tasks.md` into a detailed implementation checklist with phases P0–P7 and acceptance gates A1–A6.
+
+### Why
+- The existing ticket work was valuable and should be committed before code changes.
+- The untracked `fake-cms` binary is a build artifact and should not be accidentally staged later.
+- A detailed task list lets implementation proceed in reviewable increments and keeps the diary aligned with the work.
+
+### What worked
+- The docs commit was focused and included only the ticket workspace and vocabulary.
+- The task list now maps directly to the corrected guide's implementation phases.
+
+### What didn't work
+- No implementation failures yet. This step was planning and commit hygiene.
+
+### What I learned
+- The repo did not previously ignore the root `fake-cms` build binary, even though `make build` creates it.
+
+### What was tricky to build
+- Keeping the docs baseline separate from implementation was the main ordering constraint. If code and docs were mixed, review would be harder and the implementation diary would lose a clean starting point.
+
+### What warrants a second pair of eyes
+- The task list assumes the frontend should target the current executable schema rather than fixing the backend first. Reviewers may decide to reorder work and align the backend schema before building the frontend.
+
+### What should be done in the future
+- Implement P0 next: create the `frontend/` skeleton, prove Eleventy pagination with a tiny local smoke path, and commit that separately.
+
+### Code review instructions
+- Review `.gitignore` for the binary ignore rule.
+- Review `tasks.md` to ensure the implementation phases and acceptance gates match the corrected guide.
+- Validate with `git log --oneline -3` and `git status --porcelain`.
+
+### Technical details
+- Code/doc commits:
+  - `010c602` — `chore: ignore local fake-cms binary`
+  - `33c6fa7` — `docs: add FAKE-CMS 11ty frontend design ticket`
