@@ -15,6 +15,14 @@ topics:
       description: Workshop / teaching material
     - slug: cms
       description: Content management systems
+    - slug: 11ty
+      description: Eleventy (11ty) static site generator
+    - slug: ssg
+      description: Static site generation
+    - slug: frontend
+      description: Frontend / web build
+    - slug: javascript
+      description: JavaScript / Node.js implementation
 docTypes:
     - slug: design-doc
       description: Structured rationale and architecture notes
