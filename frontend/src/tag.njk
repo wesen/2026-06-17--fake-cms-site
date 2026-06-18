@@ -1,0 +1,18 @@
+---
+pagination:
+  data: cms.tags
+  size: 1
+  alias: tag
+permalink: "/{{ tag.urlPath }}/"
+layout: base.njk
+eleventyComputed:
+  title: "Rubrique: {{ tag.name }}"
+---
+<h1>Rubrique: {{ tag.name }}</h1>
+{% set articles = cms.articlesByTagSlug[tag.slug] or [] %}
+<p>{{ articles.length }} article{% if articles.length != 1 %}s{% endif %}</p>
+<div class="grid">
+{% for article in articles %}
+  {% include "article-card.njk" %}
+{% endfor %}
+</div>

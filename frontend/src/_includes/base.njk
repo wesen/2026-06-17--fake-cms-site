@@ -1,13 +1,17 @@
 <!doctype html>
 <html lang="fr">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ title or cms.site.name }}</title>
-    <link rel="stylesheet" href="/styles.css">
+    {% include "head.njk" %}
   </head>
   <body>
-    <header class="site-header"><a href="/">{{ cms.site.name }}</a></header>
+    <header class="site-header">
+      <a class="site-title" href="/">{{ cms.site.name }}</a>
+      <nav class="site-nav" aria-label="Sections">
+        {% for postType in cms.postTypes %}
+          <a href="/{{ postType | postTypeSlug }}/">{{ postType | postTypeSlug }}</a>
+        {% endfor %}
+      </nav>
+    </header>
     <main class="site-main">{{ content | safe }}</main>
   </body>
 </html>

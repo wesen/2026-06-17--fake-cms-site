@@ -1,0 +1,14 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>{{ "/" | absoluteUrl }}</loc></url>
+{% for postType in cms.postTypes %}
+  <url><loc>{{ ("/" + (postType | postTypeSlug) + "/") | absoluteUrl }}</loc></url>
+{% endfor %}
+{% for path in cms.sitemapUrls %}
+  <url><loc>{{ path | absoluteUrl }}</loc></url>
+{% endfor %}
+</urlset>

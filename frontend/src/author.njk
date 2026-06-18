@@ -1,0 +1,19 @@
+---
+pagination:
+  data: cms.authors
+  size: 1
+  alias: author
+permalink: "/{{ author.urlPath }}/"
+layout: base.njk
+eleventyComputed:
+  title: "Author: {{ author.displayName }}"
+---
+<h1>{{ author.displayName }}</h1>
+{% if author.description %}<p>{{ author.description }}</p>{% endif %}
+{% set articles = cms.articlesByAuthorSlug[author.slug] or [] %}
+<p>{{ articles.length }} article{% if articles.length != 1 %}s{% endif %}</p>
+<div class="grid">
+{% for article in articles %}
+  {% include "article-card.njk" %}
+{% endfor %}
+</div>

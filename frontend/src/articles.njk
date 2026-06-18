@@ -6,13 +6,31 @@ pagination:
 permalink: "/{{ article.urlPath }}/"
 layout: base.njk
 eleventyComputed:
-  title: "{{ article.seo.title }}"
+  title: "{{ article.title }}"
 ---
 <article class="article article-{{ article.postTypeSlug }}">
+  <p class="eyebrow"><a href="/{{ article.postTypeSlug }}/">{{ article.postTypeSlug }}</a></p>
   <h1>{{ article.title }}</h1>
-  <p class="excerpt">{{ article.excerpt }}</p>
-  {% renderBlocks article.blocks %}
-  {% if article.seo.jsonLd %}
-  <script type="application/ld+json">{{ article.seo.jsonLd | json | safe }}</script>
+  {% if article.excerpt %}<p class="excerpt">{{ article.excerpt }}</p>{% endif %}
+  {% if article.featuredMedia %}
+    <figure class="featured-media">
+      <img src="{{ article.featuredMedia.url }}" alt="{{ article.featuredMedia.alt or '' }}">
+      {% if article.featuredMedia.caption %}<figcaption>{{ article.featuredMedia.caption }}</figcaption>{% endif %}
+    </figure>
   {% endif %}
+  <p class="meta">
+    {% if article.author %}By <a href="/author/{{ article.author.slug | pathSegment }}/">{{ article.author.displayName }}</a>{% endif %}
+    {% if article.publishedAt %}<span>{{ article.publishedAt }}</span>{% endif %}
+  </p>
+  <section class="article-body">
+    {% renderBlocks article.blocks %}
+  </section>
+  <footer class="taxonomy-links">
+    {% for category in article.categories %}
+      <a href="/archives/{{ category.slug | pathSegment }}/">{{ category.name }}</a>
+    {% endfor %}
+    {% for tag in article.tags %}
+      <a href="/rubrique/{{ tag.slug | pathSegment }}/">#{{ tag.name }}</a>
+    {% endfor %}
+  </footer>
 </article>

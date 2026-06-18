@@ -1,0 +1,8 @@
+<article class="card card-{{ article.postTypeSlug }}">
+  <h2><a href="/{{ article.urlPath }}/">{{ article.title }}</a></h2>
+  {% if article.excerpt %}<p>{{ article.excerpt }}</p>{% endif %}
+  <p class="meta">
+    {% if article.author %}<a href="/author/{{ article.author.slug | pathSegment }}/">{{ article.author.displayName }}</a>{% endif %}
+    {% if article.publishedAt %}<span>{{ article.publishedAt }}</span>{% endif %}
+  </p>
+</article>

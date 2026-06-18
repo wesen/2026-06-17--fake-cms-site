@@ -1,0 +1,18 @@
+---
+pagination:
+  data: cms.postTypes
+  size: 1
+  alias: postType
+permalink: "/{{ postType | postTypeSlug }}/"
+layout: base.njk
+eleventyComputed:
+  title: "Section: {{ postType | postTypeSlug }}"
+---
+<h1>Section: {{ postType | postTypeSlug }}</h1>
+{% set articles = cms.articlesByPostType[postType] or [] %}
+<p>{{ articles.length }} article{% if articles.length != 1 %}s{% endif %}</p>
+<div class="grid">
+{% for article in articles %}
+  {% include "article-card.njk" %}
+{% endfor %}
+</div>

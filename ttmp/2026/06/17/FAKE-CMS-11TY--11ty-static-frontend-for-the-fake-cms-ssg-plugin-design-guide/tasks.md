@@ -35,10 +35,10 @@
 - [x] P4.2 Register filters/shortcodes: `postTypeSlug`, `pathSegment`, `json`, `absoluteUrl`, `renderBlocks`.
 - [x] P4.3 Keep the plugin project-local (`frontend/_config/fakeCmsPlugin.cjs`) until the backend schema stabilizes.
 
-- [ ] P5.1 Add visible Nunjucks templates: `articles.njk`, `tag.njk`, `category.njk`, `author.njk`, `post-type.njk`, `index.njk`, `sitemap.xml.njk`.
-- [ ] P5.2 Add `_includes/base.njk`, `_includes/head.njk`, and reusable cards/partials.
-- [ ] P5.3 Ensure `seo.jsonLd` is serialized with a JSON filter and injected as `<script type="application/ld+json">`.
-- [ ] P5.4 Add minimal CSS and passthrough copy so pages are readable.
+- [x] P5.1 Add visible Nunjucks templates: `articles.njk`, `tag.njk`, `category.njk`, `author.njk`, `post-type.njk`, `index.njk`, `sitemap.xml.njk`.
+- [x] P5.2 Add `_includes/base.njk`, `_includes/head.njk`, and reusable cards/partials.
+- [x] P5.3 Ensure `seo.jsonLd` is serialized with a JSON filter and injected as `<script type="application/ld+json">`.
+- [x] P5.4 Add minimal CSS and passthrough copy so pages are readable.
 
 - [ ] P6.1 Add Eleventy programmatic integration test that builds against a running seeded fake-cms server.
 - [ ] P6.2 Assert article-page count equals `articles.totalCount`.

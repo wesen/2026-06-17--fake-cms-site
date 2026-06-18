@@ -2,10 +2,22 @@
 layout: base.njk
 title: Fake CMS 11ty Frontend
 ---
-<h1>{{ cms.site.name }}</h1>
-<p>This scaffold proves that Eleventy can read build-time CMS data and write static pages.</p>
-<ul>
-{% for article in cms.articles %}
-  <li><a href="/{{ article.urlPath }}/">{{ article.title }}</a></li>
-{% endfor %}
-</ul>
+<section class="hero">
+  <h1>{{ cms.site.name }}</h1>
+  <p>A static Eleventy mirror of the fake-cms GraphQL workshop API.</p>
+  <p>{{ cms.articles.length }} articles · {{ cms.categories.length }} categories · {{ cms.tags.length }} tags · {{ cms.authors.length }} authors</p>
+</section>
+
+<section>
+  <h2>Latest articles</h2>
+  <div class="grid">
+  {% for article in cms.articles | slice(0, 12) %}
+    {% include "article-card.njk" %}
+  {% endfor %}
+  </div>
+</section>
+
+<section class="link-cloud">
+  <h2>Rubriques</h2>
+  {% for tag in cms.tags %}<a href="/{{ tag.urlPath }}/">{{ tag.name }}</a>{% endfor %}
+</section>

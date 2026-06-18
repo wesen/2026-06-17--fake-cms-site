@@ -67,3 +67,12 @@ P4 complete: added project-local fakeCmsPlugin, replaced hardcoded global data w
 
 - /home/manuel/code/wesen/2026-06-17--fake-cms-site/frontend/_config/fakeCmsPlugin.cjs — Eleventy plugin boundary for CMS data and helpers
 
+
+## 2026-06-18
+
+P5 complete: added visible Nunjucks templates for articles, post-type archives, tags (/rubrique), categories (/archives), authors, optional pages, homepage, shared head partial, article cards, sitemap.xml, and expanded CSS. Build now writes 189 Eleventy pages from seeded CMS data.
+
+### Related Files
+
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/frontend/src/sitemap.xml.njk — Sitemap template over normalized URLs
+

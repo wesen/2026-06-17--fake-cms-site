@@ -1,0 +1,19 @@
+---
+pagination:
+  data: cms.categories
+  size: 1
+  alias: category
+permalink: "/{{ category.urlPath }}/"
+layout: base.njk
+eleventyComputed:
+  title: "Archive: {{ category.name }}"
+---
+<h1>Archive: {{ category.name }}</h1>
+{% if category.description %}<p>{{ category.description }}</p>{% endif %}
+{% set articles = cms.articlesByCategorySlug[category.slug] or [] %}
+<p>{{ articles.length }} article{% if articles.length != 1 %}s{% endif %}</p>
+<div class="grid">
+{% for article in articles %}
+  {% include "article-card.njk" %}
+{% endfor %}
+</div>

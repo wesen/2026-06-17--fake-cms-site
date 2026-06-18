@@ -600,3 +600,68 @@ This is the first end-to-end static build from the fake CMS. It does not yet ren
 ### Technical details
 - Build output: `Copied 2 Wrote 141 files in 0.38 seconds (v3.1.6)`.
 - File count after build: 142 files under `frontend/_site` including copied CSS.
+
+## Step 10: Add visible archive, author, page, head, and sitemap templates
+
+This step turned the article-only build into a fuller static site. The frontend now renders post-type archive pages, tag pages under `/rubrique/`, category archives under `/archives/`, author pages, an optional page template, a homepage, and `sitemap.xml`. The shared `<head>` partial now serializes `seo.jsonLd` into the document head rather than leaving JSON-LD inside the body.
+
+The implementation still keeps the teaching surface visible: all page families are normal Nunjucks templates under `frontend/src/`, not hidden virtual templates. The project-local plugin supplies data and helpers; the templates show how static pages are generated from normalized CMS data.
+
+**Commit (code):** <pending> — "feat(frontend): add archive templates and sitemap"
+
+### What I did
+- Added `frontend/src/_includes/head.njk`.
+- Rewrote `frontend/src/_includes/base.njk` to include the head partial and section navigation.
+- Added `frontend/src/_includes/article-card.njk`.
+- Rewrote `frontend/src/articles.njk` to use real CMS fields, taxonomy links, featured media, and the shared head partial.
+- Rewrote `frontend/src/index.njk` as a homepage over normalized CMS data.
+- Added archive templates:
+  - `frontend/src/tag.njk`
+  - `frontend/src/category.njk`
+  - `frontend/src/author.njk`
+  - `frontend/src/post-type.njk`
+  - `frontend/src/pages.njk`
+  - `frontend/src/sitemap.xml.njk`
+- Expanded `frontend/src/styles.css` for cards, layout, taxonomy links, and block rendering.
+- Ran `npm test` successfully.
+- Built against `./fake-cms serve --path testdata/cms.db --addr :18080` successfully.
+- Spot-checked that JSON-LD appears before `<body>` and no `/tag/` directory exists.
+- Marked P5.1–P5.4 complete.
+
+### Why
+- Acceptance requires more than article pages: tags must live at `/rubrique/`, sitemap must cover generated URLs, and SEO JSON-LD must be injected into page documents.
+- Visible templates are part of the workshop value; they show the intern how Eleventy pagination creates each page family.
+
+### What worked
+- Build output: `Copied 2 Wrote 189 files in 0.60 seconds (v3.1.6)`.
+- There are 30 generated `/rubrique/<slug>/` tag pages.
+- JSON-LD appears in the article `<head>` before `<body>`.
+- No `/tag/` directory was generated.
+
+### What didn't work
+- No failures. The optional `pages.njk` currently emits no pages unless `CMS_PAGE_SLUGS` is configured, because the backend still lacks page enumeration.
+
+### What I learned
+- Nunjucks layouts can see the pagination alias (`article`, `tag`, `category`, etc.), so the shared head partial can derive article/page SEO without trying to serialize object-valued `eleventyComputed` data.
+
+### What was tricky to build
+- The SEO object cannot be passed around as a string. The head partial detects `article.seo` or `cmsPage.seo` directly from the rendering context and serializes `jsonLd` with the `json` filter.
+- Sitemap generation needs both normalized CMS entity URLs and local generated pages such as `/` and post-type archive pages.
+
+### What warrants a second pair of eyes
+- Review the exact sitemap scope. It currently includes homepage, post-type archives, normalized articles/categories/tags/authors/pages. It does not include pagination subpages because archives are not paginated beyond one page each.
+- Review whether encoded slugs in generated paths are acceptable for the visual workshop output.
+
+### What should be done in the future
+- P6 should automate the spot checks: article count, no `/tag/`, `/rubrique/` exists, sitemap includes expected URLs, and JSON-LD parses.
+
+### Code review instructions
+- Start with `frontend/src/_includes/head.njk`, then `frontend/src/tag.njk`, `frontend/src/category.njk`, and `frontend/src/sitemap.xml.njk`.
+- Validate with a running seeded CMS:
+  - `cd frontend && npm test`
+  - `CMS_ENDPOINT=http://localhost:18080/graphql SITE_URL=http://example.test npm run build`
+  - `grep -R "application/ld+json" _site/actualites _site/best-cases | head`
+
+### Technical details
+- Build file count after P5: 190 files under `_site` including copied CSS.
+- Generated tag-page count: 30.

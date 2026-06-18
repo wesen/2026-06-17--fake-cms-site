@@ -1,0 +1,11 @@
+{% set currentSeo = seo %}
+{% if article and article.seo %}{% set currentSeo = article.seo %}{% endif %}
+{% if cmsPage and cmsPage.seo %}{% set currentSeo = cmsPage.seo %}{% endif %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if currentSeo and currentSeo.title %}{{ currentSeo.title }}{% else %}{{ title or cms.site.name }}{% endif %}</title>
+{% if currentSeo and currentSeo.metaDescription %}<meta name="description" content="{{ currentSeo.metaDescription }}">{% endif %}
+{% if currentSeo and currentSeo.canonical %}<link rel="canonical" href="{{ currentSeo.canonical }}">{% endif %}
+{% if currentSeo and currentSeo.robots %}<meta name="robots" content="{{ currentSeo.robots }}">{% endif %}
+{% if currentSeo and currentSeo.jsonLd %}<script type="application/ld+json">{{ currentSeo.jsonLd | json | safe }}</script>{% endif %}
+<link rel="stylesheet" href="/styles.css">

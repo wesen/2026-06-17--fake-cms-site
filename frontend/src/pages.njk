@@ -1,0 +1,14 @@
+---
+pagination:
+  data: cms.pages
+  size: 1
+  alias: cmsPage
+permalink: "/{{ cmsPage.urlPath }}/"
+layout: base.njk
+eleventyComputed:
+  title: "{{ cmsPage.title }}"
+---
+<article class="page">
+  <h1>{{ cmsPage.title }}</h1>
+  {% renderBlocks cmsPage.blocks %}
+</article>
