@@ -31,3 +31,12 @@ Committed documentation baseline (33c6fa7) and expanded tasks.md into detailed P
 
 - /home/manuel/code/wesen/2026-06-17--fake-cms-site/ttmp/2026/06/17/FAKE-CMS-11TY--11ty-static-frontend-for-the-fake-cms-ssg-plugin-design-guide/tasks.md — Detailed implementation checklist
 
+
+## 2026-06-18
+
+P0 scaffold complete: added frontend/ Eleventy project with hardcoded cms global data, visible index/article templates, base layout, CSS passthrough, npm scripts, and README. Build emits /best-cases/hardcoded-smoke-article/.
+
+### Related Files
+
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/frontend/eleventy.config.cjs — Initial Eleventy config and hardcoded CMS smoke data
+

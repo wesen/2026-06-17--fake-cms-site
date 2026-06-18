@@ -354,3 +354,63 @@ If the site doesnot contain enough data, feel free to seed more from the 20minut
 - Code/doc commits:
   - `010c602` — `chore: ignore local fake-cms binary`
   - `33c6fa7` — `docs: add FAKE-CMS 11ty frontend design ticket`
+
+## Step 6: Scaffold the Eleventy frontend and prove pagination with hardcoded data
+
+This step created the first real frontend files under `frontend/`. The goal was intentionally small: prove the central Eleventy mechanism before adding GraphQL. A hardcoded `cms.articles` global-data object feeds `src/articles.njk`, and Eleventy pagination emits a static article page at the CMS-style path `/best-cases/hardcoded-smoke-article/`.
+
+This unlocks the rest of the implementation because the static-site skeleton, package scripts, layout, passthrough CSS, and output directory are now real. The next step can replace the hardcoded data with a GraphQL client without also debugging Eleventy project setup.
+
+**Commit (code):** <pending> — "feat(frontend): scaffold Eleventy site"
+
+### What I did
+- Added frontend ignore rules to `.gitignore`: `/frontend/_site/`, `/frontend/.cache/`, `/frontend/node_modules/`.
+- Created `frontend/package.json` with scripts for `build`, `serve`, `clean`, and `test`.
+- Installed `@11ty/eleventy` and generated `frontend/package-lock.json`.
+- Added `frontend/eleventy.config.cjs` with hardcoded `cms` global data, a temporary `json` filter, and a temporary `renderBlocks` shortcode.
+- Added visible templates:
+  - `frontend/src/index.njk`
+  - `frontend/src/articles.njk`
+  - `frontend/src/_includes/base.njk`
+  - `frontend/src/styles.css`
+- Added `frontend/README.md` with the seeded fake-cms command.
+- Ran `npm run clean` and `npm run build` from `frontend/`.
+- Marked P0.1, P0.2, and P0.3 complete in `tasks.md`.
+
+### Why
+- The corrected design depends on Eleventy pagination over build-time data. Proving that with one hardcoded article isolates Eleventy setup from GraphQL/API work.
+- Keeping the templates visible now preserves the workshop teaching goal: an intern can open the files and see how one template generates many static pages.
+
+### What worked
+- `npm run build` succeeded with Eleventy 3.1.6.
+- Eleventy wrote:
+  - `_site/best-cases/hardcoded-smoke-article/index.html`
+  - `_site/index.html`
+- Passthrough CSS copied successfully.
+
+### What didn't work
+- No failure in this step. I deliberately did not run `npm test` yet because the test directory is not implemented until later phases.
+
+### What I learned
+- The corrected guide's core assumption is valid in this repo, not just in a throwaway test: `addGlobalData` plus `pagination.data` produces the desired CMS-style path.
+
+### What was tricky to build
+- The temporary `renderBlocks` shortcode and hardcoded data are intentionally disposable. The tricky part is preventing them from becoming permanent architecture. They are only a scaffold so the next commits can replace them with `_config/renderBlocks.cjs` and `_config/fakeCmsPlugin.cjs`.
+
+### What warrants a second pair of eyes
+- Confirm the frontend should live under `frontend/` rather than at the repo root. This keeps the Go backend untouched but introduces a nested npm project.
+
+### What should be done in the future
+- Replace hardcoded global data with the project-local plugin and GraphQL client in P1/P4.
+- Add tests before relying on `npm test` in CI.
+
+### Code review instructions
+- Start with `frontend/eleventy.config.cjs`, then `frontend/src/articles.njk`.
+- Validate with:
+  - `cd frontend && npm install`
+  - `npm run clean && npm run build`
+  - `find _site -type f | sort`
+
+### Technical details
+- Build command: `npm run build`
+- Output observed: `[11ty] Copied 2 Wrote 2 files in 0.05 seconds (v3.1.6)`

@@ -4,6 +4,9 @@
 /fake-cms
 /coverage.out
 /dist/
+/frontend/_site/
+/frontend/.cache/
+/frontend/node_modules/
 
 # Go
 *.test

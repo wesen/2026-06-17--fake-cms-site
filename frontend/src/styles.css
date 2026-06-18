@@ -1,0 +1,8 @@
+:root { color-scheme: light; font-family: system-ui, sans-serif; }
+body { margin: 0; background: #f8f8f4; color: #20201d; }
+a { color: #8b1e1e; }
+.site-header { padding: 1rem 2rem; background: #20201d; }
+.site-header a { color: white; text-decoration: none; font-weight: 700; }
+.site-main { max-width: 72ch; margin: 2rem auto; padding: 0 1rem; }
+.article { background: white; padding: 2rem; border: 1px solid #e2dfd2; }
+.excerpt { color: #555; font-size: 1.1rem; }

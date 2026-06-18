@@ -1,0 +1,15 @@
+{
+  "name": "fake-cms-11ty-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Eleventy static frontend for the fake-cms GraphQL workshop API.",
+  "scripts": {
+    "build": "eleventy --config=eleventy.config.cjs",
+    "serve": "eleventy --config=eleventy.config.cjs --serve",
+    "clean": "rm -rf _site .cache",
+    "test": "node --test test/*.test.mjs"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}

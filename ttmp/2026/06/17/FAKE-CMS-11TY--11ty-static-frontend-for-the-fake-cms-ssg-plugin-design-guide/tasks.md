@@ -12,9 +12,9 @@
 - [x] D0.7 Commit ticket docs and sources (`33c6fa7`).
 
 ### Implementation plan
-- [ ] P0.1 Add frontend project skeleton under `frontend/` with package.json, Eleventy config, source/layout directories, and ignore rules for `_site`, `.cache`, and `node_modules`.
-- [ ] P0.2 Add a tiny hardcoded CMS global-data smoke path proving Eleventy pagination can emit one article page.
-- [ ] P0.3 Add npm scripts for `build`, `serve`, `test`, `clean`, and a README with the seeded fake-cms command.
+- [x] P0.1 Add frontend project skeleton under `frontend/` with package.json, Eleventy config, source/layout directories, and ignore rules for `_site`, `.cache`, and `node_modules`.
+- [x] P0.2 Add a tiny hardcoded CMS global-data smoke path proving Eleventy pagination can emit one article page.
+- [x] P0.3 Add npm scripts for `build`, `serve`, `test`, `clean`, and a README with the seeded fake-cms command.
 
 - [ ] P1.1 Add a GraphQL client (`gql`) that POSTs `{query, variables}` and throws on HTTP or GraphQL errors.
 - [ ] P1.2 Add `fetchAllArticles` with Relay cursor pagination, using the correct `BlockUnion` fragment (`... on Block { id order }`).

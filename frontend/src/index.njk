@@ -1,0 +1,11 @@
+---
+layout: base.njk
+title: Fake CMS 11ty Frontend
+---
+<h1>{{ cms.site.name }}</h1>
+<p>This scaffold proves that Eleventy can read build-time CMS data and write static pages.</p>
+<ul>
+{% for article in cms.articles %}
+  <li><a href="/{{ article.urlPath }}/">{{ article.title }}</a></li>
+{% endfor %}
+</ul>
