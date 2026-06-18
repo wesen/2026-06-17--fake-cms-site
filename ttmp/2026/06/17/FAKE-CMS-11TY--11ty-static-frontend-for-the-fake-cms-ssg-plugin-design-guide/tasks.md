@@ -16,15 +16,15 @@
 - [x] P0.2 Add a tiny hardcoded CMS global-data smoke path proving Eleventy pagination can emit one article page.
 - [x] P0.3 Add npm scripts for `build`, `serve`, `test`, `clean`, and a README with the seeded fake-cms command.
 
-- [ ] P1.1 Add a GraphQL client (`gql`) that POSTs `{query, variables}` and throws on HTTP or GraphQL errors.
-- [ ] P1.2 Add `fetchAllArticles` with Relay cursor pagination, using the correct `BlockUnion` fragment (`... on Block { id order }`).
-- [ ] P1.3 Add fetchers for current executable schema lists: `categories`, `tags`, `authors`, and optional configured `pageSlugs`.
-- [ ] P1.4 Add a contract test or smoke command that verifies `testdata/cms.db` returns article data and catches the invalid old `blocks { order }` query.
+- [x] P1.1 Add a GraphQL client (`gql`) that POSTs `{query, variables}` and throws on HTTP or GraphQL errors.
+- [x] P1.2 Add `fetchAllArticles` with Relay cursor pagination, using the correct `BlockUnion` fragment (`... on Block { id order }`).
+- [x] P1.3 Add fetchers for current executable schema lists: `categories`, `tags`, `authors`, and optional configured `pageSlugs`.
+- [x] P1.4 Add a contract test or smoke command that verifies `testdata/cms.db` returns article data and catches the invalid old `blocks { order }` query.
 
-- [ ] P2.1 Add normalization helpers: `postTypeSlug`, `pathSegment`, URL derivation, and entity `kind` tagging.
-- [ ] P2.2 Build indexes once in normalization: `articlesByPostType`, `articlesByTagSlug`, `articlesByCategorySlug`, `articlesByAuthorSlug`.
-- [ ] P2.3 Build `sitemapUrls` from normalized articles, pages, categories, tags, and authors.
-- [ ] P2.4 Unit-test normalization, especially `/rubrique/` tag URLs and accented slugs.
+- [x] P2.1 Add normalization helpers: `postTypeSlug`, `pathSegment`, URL derivation, and entity `kind` tagging.
+- [x] P2.2 Build indexes once in normalization: `articlesByPostType`, `articlesByTagSlug`, `articlesByCategorySlug`, `articlesByAuthorSlug`.
+- [x] P2.3 Build `sitemapUrls` from normalized articles, pages, categories, tags, and authors.
+- [x] P2.4 Unit-test normalization, especially `/rubrique/` tag URLs and accented slugs.
 
 - [ ] P3.1 Add `renderBlocks` with distinct markup for all seven block types.
 - [ ] P3.2 Escape HTML attributes/text and clamp heading levels safely.

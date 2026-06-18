@@ -414,3 +414,69 @@ This unlocks the rest of the implementation because the static-site skeleton, pa
 ### Technical details
 - Build command: `npm run build`
 - Output observed: `[11ty] Copied 2 Wrote 2 files in 0.05 seconds (v3.1.6)`
+
+## Step 7: Add the GraphQL client, contract smoke, and CMS normalization
+
+This step replaced guesswork about the backend with executable frontend code. I added a GraphQL client that follows the current fake-cms schema, including the correct block-union fragment, and a contract smoke script that proves the seeded server returns articles while deliberately catching the invalid `blocks { order }` query from the first guide.
+
+I also added normalization helpers that make templates simpler and safer: URL paths are derived once, tag URLs are locked to `/rubrique/`, accented slugs are URL-encoded, article indexes are built once, and sitemap URLs are assembled from normalized entities.
+
+**Commit (code):** <pending> — "feat(frontend): add CMS client and normalization"
+
+### What I did
+- Added `frontend/_config/fakeCmsClient.cjs`:
+  - `gql(endpoint, query, variables)`
+  - `fetchAllArticles()` with cursor pagination
+  - `fetchKnownPages()` for optional configured page slugs
+  - `fetchCms()` for articles/categories/tags/authors/pages
+- Added `frontend/_config/normalizeCms.cjs`:
+  - `postTypeSlug`
+  - `pathSegment`
+  - `normalizeCms`
+  - taxonomy/author/post-type indexes
+  - `sitemapUrls`
+- Added `frontend/scripts/contract-smoke.mjs`.
+- Added `frontend/test/normalizeCms.test.mjs`.
+- Added `contract:smoke` npm script.
+- Ran `npm test` successfully.
+- Started the seeded backend with `./fake-cms serve --path testdata/cms.db --addr :18080` and ran `CMS_ENDPOINT=http://localhost:18080/graphql npm run contract:smoke` successfully.
+- Marked P1.1–P1.4 and P2.1–P2.4 complete.
+
+### Why
+- The frontend must target the executable GraphQL schema, not the aspirational SDL.
+- URL derivation and grouping are correctness-sensitive enough to live in testable JavaScript helpers rather than ad hoc template snippets.
+
+### What worked
+- `npm test` passed 3 normalization tests.
+- Contract smoke reported: `fake-cms contract smoke ok: 140 articles at http://localhost:18080/graphql`.
+- The contract smoke confirms both the positive query and the expected failure for direct `BlockUnion.order` selection.
+
+### What didn't work
+- No new failures. The known backend mismatch is handled by querying `categories`, `tags`, and `authors` without `first` and by not relying on `site` or `pages` enumeration.
+
+### What I learned
+- The seeded dataset has enough content for the workshop right now: 140 articles. No extra 20minutes-media.com seeding is needed at this point.
+
+### What was tricky to build
+- The current executable schema exposes `articles(filter: String)` but not the typed filter object from `schema.graphql`. The client avoids that path and fetches all articles once, then normalization builds the taxonomy indexes client-side.
+- `pathSegment` deliberately uses `encodeURIComponent`; this preserves output correctness for accented slugs, but it means generated file paths contain URL-encoded segments.
+
+### What warrants a second pair of eyes
+- Confirm whether encoded path segments are preferred over raw UTF-8 output directories for the final workshop site. The backend troubleshooting text says to handle accents; URL encoding is safe, but raw UTF-8 paths may look nicer.
+- Review whether `fetchAllArticles` should assert `articles.length === totalCount` directly. The integration test will cover this later.
+
+### What should be done in the future
+- P3: implement the real block renderer with seven branches and tests.
+- Later P4: wire `fetchCms + normalizeCms` into the project-local plugin, replacing the hardcoded smoke data.
+
+### Code review instructions
+- Start with `frontend/_config/fakeCmsClient.cjs`, especially `ARTICLE_FIELDS` and `fetchAllArticles`.
+- Then review `frontend/_config/normalizeCms.cjs` for URL conventions and indexes.
+- Validate with:
+  - `cd frontend && npm test`
+  - `./fake-cms serve --path testdata/cms.db --addr :18080`
+  - `CMS_ENDPOINT=http://localhost:18080/graphql npm run contract:smoke`
+
+### Technical details
+- Correct current list queries: `categories { ... }`, `tags { ... }`, `authors { ... }`.
+- Correct block union query pattern: `blocks { __typename ... on Block { id order } ... }`.

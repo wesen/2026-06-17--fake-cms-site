@@ -40,3 +40,12 @@ P0 scaffold complete: added frontend/ Eleventy project with hardcoded cms global
 
 - /home/manuel/code/wesen/2026-06-17--fake-cms-site/frontend/eleventy.config.cjs — Initial Eleventy config and hardcoded CMS smoke data
 
+
+## 2026-06-18
+
+P1/P2 complete: added GraphQL client with cursor pagination and correct BlockUnion fragment, contract smoke script against seeded fake-cms, normalization helpers for URL paths/indexes/sitemap, and Node unit tests. Seeded dataset has 140 articles, so no extra seeding needed now.
+
+### Related Files
+
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/frontend/_config/fakeCmsClient.cjs — GraphQL client and current executable schema queries
+
