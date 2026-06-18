@@ -1,6 +1,7 @@
 # Build artifacts
 /cms.db
 /*.db
+/fake-cms
 /coverage.out
 /dist/
 
