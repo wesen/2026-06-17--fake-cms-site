@@ -40,11 +40,11 @@
 - [x] P5.3 Ensure `seo.jsonLd` is serialized with a JSON filter and injected as `<script type="application/ld+json">`.
 - [x] P5.4 Add minimal CSS and passthrough copy so pages are readable.
 
-- [ ] P6.1 Add Eleventy programmatic integration test that builds against a running seeded fake-cms server.
-- [ ] P6.2 Assert article-page count equals `articles.totalCount`.
-- [ ] P6.3 Assert no `/tag/` URLs and at least one `/rubrique/` URL.
-- [ ] P6.4 Assert `sitemap.xml` includes generated content URLs.
-- [ ] P6.5 Assert representative article HTML includes valid JSON-LD.
+- [x] P6.1 Add Eleventy programmatic integration test that builds against a running seeded fake-cms server.
+- [x] P6.2 Assert article-page count equals `articles.totalCount`.
+- [x] P6.3 Assert no `/tag/` URLs and at least one `/rubrique/` URL.
+- [x] P6.4 Assert `sitemap.xml` includes generated content URLs.
+- [x] P6.5 Assert representative article HTML includes valid JSON-LD.
 
 - [ ] P7.1 Document known backend contract mismatches in `frontend/README.md`.
 - [ ] P7.2 Update ticket diary after each committed implementation step.
@@ -52,9 +52,9 @@
 - [ ] P7.4 Commit implementation in focused intervals matching completed phases.
 
 ### Acceptance gate
-- [ ] A1 Every article in `testdata/cms.db` has a corresponding static HTML page at `/<postTypeSlug>/<slug>/`.
-- [ ] A2 Tag pages live at `/rubrique/<slug>/`, never `/tag/<slug>/`.
-- [ ] A3 Article pages inject `seo.jsonLd` as valid JSON-LD.
-- [ ] A4 All seven block types render distinctly; unknown block types fail the build/test.
-- [ ] A5 `sitemap.xml` covers generated article, archive, tag, author, and optional page URLs.
-- [ ] A6 The site builds from `./fake-cms serve --path testdata/cms.db` with no manual data entry.
+- [x] A1 Every article in `testdata/cms.db` has a corresponding static HTML page at `/<postTypeSlug>/<slug>/`.
+- [x] A2 Tag pages live at `/rubrique/<slug>/`, never `/tag/<slug>/`.
+- [x] A3 Article pages inject `seo.jsonLd` as valid JSON-LD.
+- [x] A4 All seven block types render distinctly; unknown block types fail the build/test.
+- [x] A5 `sitemap.xml` covers generated article, archive, tag, author, and optional page URLs.
+- [x] A6 The site builds from `./fake-cms serve --path testdata/cms.db` with no manual data entry.

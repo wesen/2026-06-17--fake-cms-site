@@ -665,3 +665,65 @@ The implementation still keeps the teaching surface visible: all page families a
 ### Technical details
 - Build file count after P5: 190 files under `_site` including copied CSS.
 - Generated tag-page count: 30.
+
+## Step 11: Add integration build acceptance checks
+
+This step automated the end-to-end checks that were previously manual spot checks. The new integration script starts the seeded Go backend with `go run`, waits for `/healthz`, builds the Eleventy frontend against that live GraphQL endpoint, and inspects `_site/` for the workshop acceptance criteria.
+
+The script now verifies the important invariants directly: the generated article-page count equals the CMS `totalCount`, no `/tag/` directory exists, `/rubrique/` pages exist, every generated HTML page is represented in `sitemap.xml`, and a representative article contains parseable JSON-LD.
+
+**Commit (code):** <pending> — "test(frontend): add integration build acceptance checks"
+
+### What I did
+- Added `frontend/scripts/integration-build.mjs`.
+- Added `test:integration` npm script.
+- The integration script:
+  - starts `go run ./cmd/fake-cms serve --path testdata/cms.db --addr :18081`,
+  - waits for `/healthz`,
+  - queries article `totalCount`,
+  - runs the Eleventy build with `CMS_ENDPOINT` and `SITE_URL`,
+  - counts article pages,
+  - asserts no `/tag/` output,
+  - asserts `/rubrique/` output exists,
+  - verifies sitemap coverage for generated HTML pages,
+  - parses JSON-LD from a representative article page.
+- Fixed process cleanup by spawning `go run` as a detached process group and killing the process group in `finally`.
+- Ran `npm test` and `npm run test:integration` successfully.
+- Marked P6.1–P6.5 and acceptance gates A1–A6 complete.
+
+### Why
+- The frontend's correctness depends on the interaction between Go backend, GraphQL client, Eleventy global data, templates, and generated files. Unit tests cannot prove the full path.
+- The previous script version proved the checks but timed out because `go run` left a child process alive; reliable cleanup is part of making the integration test usable.
+
+### What worked
+- Integration output: `integration ok: 140 article pages, 190 files`.
+- The script catches the highest-risk regressions: article count mismatch, `/tag/` URL regression, sitemap drift, and missing/invalid JSON-LD.
+
+### What didn't work
+- First integration run printed `integration ok` but the command timed out after 180 seconds. Cause: killing the parent `go run` process did not terminate the compiled child server process.
+- Fix: spawn with `detached: true` and call `process.kill(-server.pid, "SIGTERM")` to terminate the process group.
+
+### What I learned
+- `go run` process management matters in Node integration tests. Treat it as a process group, not a single process.
+- Verifying sitemap coverage by comparing generated HTML paths against sitemap contents is stronger than checking only a few sample URLs.
+
+### What was tricky to build
+- Counting article pages required distinguishing `/post-type/<slug>/index.html` article pages from `/post-type/index.html` archive pages and from `/archives`, `/rubrique`, and `/author` pages.
+- The script must be robust enough to run from `frontend/` while starting the Go backend from the repository root.
+
+### What warrants a second pair of eyes
+- Review the integration script's article-file classifier. It assumes article pages have exactly `/<postType>/<slug>/index.html` shape and excludes `archives`, `rubrique`, and `author` prefixes.
+- Review whether the integration test should be part of default `npm test` or stay as explicit `npm run test:integration` because it starts a Go server.
+
+### What should be done in the future
+- P7 should update the frontend README with test commands and run final `go test ./...` plus `docmgr doctor`.
+
+### Code review instructions
+- Start with `frontend/scripts/integration-build.mjs`.
+- Validate with:
+  - `cd frontend && npm test`
+  - `npm run test:integration`
+
+### Technical details
+- Integration backend endpoint: `http://localhost:18081/graphql`.
+- Current verified output: 140 article pages, 190 total files.

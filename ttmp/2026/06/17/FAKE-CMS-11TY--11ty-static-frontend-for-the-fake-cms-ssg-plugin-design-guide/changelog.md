@@ -76,3 +76,12 @@ P5 complete: added visible Nunjucks templates for articles, post-type archives, 
 
 - /home/manuel/code/wesen/2026-06-17--fake-cms-site/frontend/src/sitemap.xml.njk — Sitemap template over normalized URLs
 
+
+## 2026-06-18
+
+P6 acceptance checks complete: added integration script that starts seeded fake-cms, builds Eleventy, checks article count, no /tag/, /rubrique/ pages, sitemap coverage for generated HTML, and parseable JSON-LD. Fixed go-run process cleanup.
+
+### Related Files
+
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/frontend/scripts/integration-build.mjs — End-to-end acceptance script
+
