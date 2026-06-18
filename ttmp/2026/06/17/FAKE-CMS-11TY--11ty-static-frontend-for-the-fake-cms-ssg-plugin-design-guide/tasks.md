@@ -26,10 +26,10 @@
 - [x] P2.3 Build `sitemapUrls` from normalized articles, pages, categories, tags, and authors.
 - [x] P2.4 Unit-test normalization, especially `/rubrique/` tag URLs and accented slugs.
 
-- [ ] P3.1 Add `renderBlocks` with distinct markup for all seven block types.
-- [ ] P3.2 Escape HTML attributes/text and clamp heading levels safely.
-- [ ] P3.3 Throw on unknown block types.
-- [ ] P3.4 Unit-test every block branch plus unknown-block failure.
+- [x] P3.1 Add `renderBlocks` with distinct markup for all seven block types.
+- [x] P3.2 Escape HTML attributes/text and clamp heading levels safely.
+- [x] P3.3 Throw on unknown block types.
+- [x] P3.4 Unit-test every block branch plus unknown-block failure.
 
 - [ ] P4.1 Convert the local plugin to real CMS mode: `addGlobalData("cms", async () => normalizeCms(await fetchCms(...)))`.
 - [ ] P4.2 Register filters/shortcodes: `postTypeSlug`, `pathSegment`, `json`, `absoluteUrl`, `renderBlocks`.

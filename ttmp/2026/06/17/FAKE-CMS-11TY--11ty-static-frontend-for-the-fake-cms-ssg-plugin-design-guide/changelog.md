@@ -49,3 +49,12 @@ P1/P2 complete: added GraphQL client with cursor pagination and correct BlockUni
 
 - /home/manuel/code/wesen/2026-06-17--fake-cms-site/frontend/_config/fakeCmsClient.cjs — GraphQL client and current executable schema queries
 
+
+## 2026-06-18
+
+P3 complete: added pure renderBlocks module covering all seven CMS block variants, HTML escaping, heading clamping, order sorting, unknown-block failure, and Node tests.
+
+### Related Files
+
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/frontend/_config/renderBlocks.cjs — Block renderer used by Eleventy shortcode
+

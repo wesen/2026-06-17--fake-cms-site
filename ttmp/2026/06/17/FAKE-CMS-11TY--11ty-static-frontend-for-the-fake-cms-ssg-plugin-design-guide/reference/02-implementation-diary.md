@@ -480,3 +480,65 @@ I also added normalization helpers that make templates simpler and safer: URL pa
 ### Technical details
 - Correct current list queries: `categories { ... }`, `tags { ... }`, `authors { ... }`.
 - Correct block union query pattern: `blocks { __typename ... on Block { id order } ... }`.
+
+## Step 8: Implement the seven-variant CMS block renderer
+
+This step implemented the real block renderer that the workshop contract requires. The temporary renderer from the scaffold only handled paragraphs; the new `renderBlocks` module renders all seven current CMS block variants, escapes text and attributes, sorts by `order`, clamps heading levels, and throws when the schema introduces an unknown block type.
+
+The block renderer is deliberately pure JavaScript with unit tests. It does not fetch data and does not depend on Eleventy. That separation matters because block rendering is the content-correctness core of the exercise and should fail fast before a full static build is involved.
+
+**Commit (code):** <pending> — "feat(frontend): render CMS blocks"
+
+### What I did
+- Added `frontend/_config/renderBlocks.cjs` with:
+  - `escapeHtml`
+  - `attrs`
+  - `clampHeadingLevel`
+  - `renderBlocks`
+  - `renderBlock`
+- Implemented render branches for:
+  - `ParagraphBlock`
+  - `HeadingBlock`
+  - `ImageBlock`
+  - `ListBlock`
+  - `QuoteBlock`
+  - `EmbedBlock`
+  - `GalleryBlock`
+- Added `frontend/test/renderBlocks.test.mjs`.
+- Ran `npm test`; all 8 tests passed.
+- Marked P3.1–P3.4 complete.
+
+### Why
+- The CMS body is a GraphQL union, not raw HTML. The frontend must explicitly render each variant.
+- Unknown blocks should break the build rather than silently dropping content.
+
+### What worked
+- The renderer produces distinct semantic markup/classes for all seven block types.
+- The tests confirm order sorting and unknown-block failure.
+- HTML escaping is centralized and covered by tests.
+
+### What didn't work
+- No failures in this step.
+
+### What I learned
+- `ImageBlock` and `EmbedBlock` both naturally render as `<figure>`, so distinctness is better asserted through classes (`block-image`, `block-embed-*`) rather than only root tag names.
+
+### What was tricky to build
+- Heading levels need clamping. CMS data is synthetic and currently sane, but a renderer should not emit `<h99>` or `<h1>` accidentally inside article bodies.
+- Embed rendering is intentionally conservative: it outputs a linked figure instead of provider-specific iframes. This keeps the first implementation safe and distinct; richer provider rendering can come later.
+
+### What warrants a second pair of eyes
+- Review whether `EmbedBlock` should render YouTube iframes now or remain a safe linked embed for the workshop baseline.
+- Review escaping coverage before allowing any CMS-provided text into `| safe` template output.
+
+### What should be done in the future
+- P4 should wire this renderer into the real plugin shortcode, replacing the scaffold's temporary inline shortcode.
+
+### Code review instructions
+- Start with `frontend/_config/renderBlocks.cjs`.
+- Validate with `cd frontend && npm test`.
+- Inspect each branch and confirm it maps to the fields in `schema.graphql` / the live schema.
+
+### Technical details
+- Unknown block error text: `Unknown CMS block type: <typename>`.
+- Current tests: 8 total across normalization and block rendering.
