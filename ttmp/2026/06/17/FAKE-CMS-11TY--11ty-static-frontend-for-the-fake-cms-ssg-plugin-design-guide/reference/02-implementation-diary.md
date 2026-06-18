@@ -1,16 +1,33 @@
 ---
-Title: "11ty Frontend — Investigation Diary"
+Title: 11ty Frontend — Investigation Diary
 Ticket: FAKE-CMS-11TY
 Status: active
-Topics: [11ty, frontend, research]
+Topics:
+    - 11ty
+    - frontend
+    - research
 DocType: reference
 Intent: long-term
 Owners: []
-Summary: "Chronological investigation diary: orienting on the CMS contract, downloading 11ty docs as evidence, and writing the design guide."
+RelatedFiles:
+    - Path: frontend/_config/fakeCmsClient.cjs
+      Note: GraphQL fetcher and current executable schema query shapes
+    - Path: frontend/_config/fakeCmsPlugin.cjs
+      Note: Project-local Eleventy plugin boundary
+    - Path: frontend/_config/renderBlocks.cjs
+      Note: Seven-variant block renderer
+    - Path: frontend/scripts/integration-build.mjs
+      Note: End-to-end frontend acceptance script
+ExternalSources: []
+Summary: 'Chronological investigation diary: orienting on the CMS contract, downloading 11ty docs as evidence, and writing the design guide.'
 LastUpdated: 2026-06-17T18:05:00-04:00
-WhatFor: "Resume context for the 11ty frontend ticket."
-WhenToUse: "Read before continuing work on FAKE-CMS-11TY."
+WhatFor: Resume context for the 11ty frontend ticket.
+WhenToUse: Read before continuing work on FAKE-CMS-11TY.
 ---
+
+
+
+
 
 # Diary
 
@@ -727,3 +744,64 @@ The script now verifies the important invariants directly: the generated article
 ### Technical details
 - Integration backend endpoint: `http://localhost:18081/graphql`.
 - Current verified output: 140 article pages, 190 total files.
+
+## Step 12: Final frontend documentation, validation, and ticket cleanup
+
+This step completed the implementation loop by documenting the validation commands, running the full frontend unit and integration checks, running the meaningful Go package tests, and verifying the docmgr ticket. The frontend README now explains how to run unit tests, the contract smoke, and the integration acceptance script.
+
+The only validation caveat is pre-existing repository state: `go test ./...` includes old debug programs under `ttmp/.../scripts/debug` that all declare `package main` with duplicate `main` functions. The real application packages pass when `ttmp` is excluded. I recorded this because it matters for review: the frontend did not introduce the Go failure, but a future cleanup should exclude or reorganize debug scripts.
+
+**Commit (code):** <pending> — "docs(frontend): document validation and finish ticket"
+
+### What I did
+- Updated `frontend/README.md` with validation commands and current integration assertions.
+- Ran frontend unit tests: `cd frontend && npm test`.
+- Ran frontend integration acceptance: `cd frontend && npm run test:integration`.
+- Ran `go test ./...`, observed a pre-existing failure in `ttmp/.../scripts/debug` due duplicate `main` functions.
+- Ran `go test $(go list ./... | grep -v '/ttmp/')`, which passed for application packages.
+- Ran `docmgr doctor --ticket FAKE-CMS-11TY --stale-after 30`, which passed.
+- Marked P7.1–P7.4 complete.
+
+### Why
+- A finished implementation needs reproducible validation commands, not just passing local state.
+- Recording the `go test ./...` caveat prevents reviewers from attributing an old debug-script issue to the new frontend.
+
+### What worked
+- `npm test` passed 8 tests.
+- `npm run test:integration` reported `integration ok: 140 article pages, 190 files`.
+- `go test $(go list ./... | grep -v '/ttmp/')` passed.
+- `docmgr doctor` passed.
+
+### What didn't work
+- `go test ./...` failed because old debug scripts under `ttmp/2026/06/17/FAKE-CMS--fake-internal-cms-graphql-api-20minutes-style-for-ssg-workshop/scripts/debug` contain multiple files with `func main()` in the same package:
+  - `04-debug-lastinsertid.go`
+  - `05-debug-seed-fk.go`
+  - `06-debug-seed-step.go`
+  - and others.
+- Exact representative error: `main redeclared in this block`.
+
+### What I learned
+- The repo's documentation workspace currently contains Go debug scripts that are visible to `go test ./...`. Future Go-wide validation should either exclude `ttmp` or add build tags to those debug scripts.
+
+### What was tricky to build
+- Final validation spans two ecosystems: Go for the fake CMS and Node/Eleventy for the frontend. The integration script is the bridge, but the repository-level Go test command still sees historical ticket artifacts.
+
+### What warrants a second pair of eyes
+- Decide whether to add build tags to historical debug scripts or change documented Go validation to exclude `ttmp`.
+- Review whether `npm run test:integration` should be part of CI; it starts a Go process and builds the whole site, which is valuable but slower than unit tests.
+
+### What should be done in the future
+- Optional cleanup: add build tags to debug scripts under old ticket workspaces so `go test ./...` is clean.
+- Optional frontend polish: richer embed rendering and image optimization.
+
+### Code review instructions
+- Review commits from `ed4d647` through the final frontend commit.
+- Validate with:
+  - `cd frontend && npm test`
+  - `cd frontend && npm run test:integration`
+  - `go test $(go list ./... | grep -v '/ttmp/')`
+  - `docmgr doctor --ticket FAKE-CMS-11TY --stale-after 30`
+
+### Technical details
+- Final generated output verified by integration: 140 article pages, 190 files.
+- No extra seeding from `20minutes-media.com` was needed because `testdata/cms.db` already contains enough data for the workshop.

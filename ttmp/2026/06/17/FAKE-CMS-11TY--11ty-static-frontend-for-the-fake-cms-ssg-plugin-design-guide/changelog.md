@@ -85,3 +85,12 @@ P6 acceptance checks complete: added integration script that starts seeded fake-
 
 - /home/manuel/code/wesen/2026-06-17--fake-cms-site/frontend/scripts/integration-build.mjs — End-to-end acceptance script
 
+
+## 2026-06-18
+
+P7 complete: documented frontend validation commands, ran npm unit tests, integration acceptance (140 article pages, 190 files), Go package tests excluding ttmp, and docmgr doctor. Noted pre-existing go test ./... failure from historical ttmp debug scripts with duplicate main functions.
+
+### Related Files
+
+- /home/manuel/code/wesen/2026-06-17--fake-cms-site/frontend/README.md — Frontend validation and backend contract notes
+

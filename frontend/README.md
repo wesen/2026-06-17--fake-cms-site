@@ -26,6 +26,34 @@ Optional environment variables:
 - `SITE_URL` — absolute base URL used by sitemap helpers.
 - `CMS_PAGE_SLUGS` — comma-separated page slugs to fetch until the backend exposes page enumeration.
 
+## Validation
+
+Run fast unit tests:
+
+```bash
+npm test
+```
+
+Run the GraphQL contract smoke against an already-running backend:
+
+```bash
+CMS_ENDPOINT=http://localhost:8080/graphql npm run contract:smoke
+```
+
+Run the full integration acceptance test. This starts the seeded Go backend itself, builds Eleventy, and inspects `_site/`:
+
+```bash
+npm run test:integration
+```
+
+Current integration assertions:
+
+- generated article page count equals `articles.totalCount`,
+- no `/tag/` output exists,
+- `/rubrique/` tag pages exist,
+- `sitemap.xml` contains every generated HTML page URL,
+- representative article JSON-LD parses as JSON.
+
 ## Known backend contract notes
 
 The current executable fake-cms schema is narrower than the checked-in SDL in a few places:

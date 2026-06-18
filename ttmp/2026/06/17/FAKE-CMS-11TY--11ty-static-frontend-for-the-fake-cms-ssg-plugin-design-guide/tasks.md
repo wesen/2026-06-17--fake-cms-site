@@ -46,10 +46,10 @@
 - [x] P6.4 Assert `sitemap.xml` includes generated content URLs.
 - [x] P6.5 Assert representative article HTML includes valid JSON-LD.
 
-- [ ] P7.1 Document known backend contract mismatches in `frontend/README.md`.
-- [ ] P7.2 Update ticket diary after each committed implementation step.
-- [ ] P7.3 Run `npm test`, `npm run build`, `go test ./...`, and `docmgr doctor` before final handoff.
-- [ ] P7.4 Commit implementation in focused intervals matching completed phases.
+- [x] P7.1 Document known backend contract mismatches in `frontend/README.md`.
+- [x] P7.2 Update ticket diary after each committed implementation step.
+- [x] P7.3 Run `npm test`, `npm run build`, `go test ./...`, and `docmgr doctor` before final handoff.
+- [x] P7.4 Commit implementation in focused intervals matching completed phases.
 
 ### Acceptance gate
 - [x] A1 Every article in `testdata/cms.db` has a corresponding static HTML page at `/<postTypeSlug>/<slug>/`.
